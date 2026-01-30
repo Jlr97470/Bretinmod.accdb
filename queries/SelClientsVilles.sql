@@ -1,0 +1,43 @@
+﻿SELECT
+  TBLCLIENTS.CliNum,
+  TBLCLIENTS.CliCode,
+  TBLCLIENTS.CliDateCre,
+  TBLCLIENTS.CliDateMaj,
+  TBLCLIENTS.CliCivCode,
+  TBLCLIENTS.CliNom,
+  TBLCLIENTS.CliPrenom,
+  TBLCLIENTS.CliAdresse,
+  TBLVILLES.VilCodePostal AS CliVilCodePostal,
+  TBLVILLES.VilNom AS CliVilNom,
+  TBLVILLES.VilPays AS CliVilPays,
+  TBLCLIENTS.CliNote,
+  TBLCLIENTS.CliTel1Libelle,
+  TBLCLIENTS.CliTel1,
+  TBLCLIENTS.CliTel2Libelle,
+  TBLCLIENTS.CliTel2,
+  TBLCLIENTS.CliBatiment,
+  TBLCLIENTS.CliEscalier,
+  TBLCLIENTS.CliEtage,
+  TBLCLIENTS.CliPorte,
+  TBLCLIENTS.CliDigicode,
+  TBLCLIENTS.CliSousCivCode,
+  TBLCLIENTS.CliSousNom,
+  TBLCLIENTS.CliSousPrenom,
+  TBLCLIENTS.CliSousAdresse,
+  TBLVILLES_1.VilCodePostal AS CliSousVilCodePostal,
+  TBLVILLES_1.VilNom AS CliSousVilNom,
+  TBLVILLES_1.VilPays AS CliSousVilPays,
+  TBLCLIENTS.CliSousNote,
+  TBLCLIENTS.CliSousTel1Libelle,
+  TBLCLIENTS.CliSousTel1,
+  TBLCLIENTS.CliSousTel2Libelle,
+  TBLCLIENTS.CliSousTel2
+FROM
+  TBLVILLES
+  RIGHT JOIN (
+    TBLCLIENTS
+    LEFT JOIN TBLVILLES AS TBLVILLES_1 ON TBLCLIENTS.CliSousVilNum = TBLVILLES_1.VilNum
+  ) ON TBLVILLES.VilNum = TBLCLIENTS.CliVilNum
+ORDER BY
+  TBLCLIENTS.CliCode,
+  TBLCLIENTS.CliNom;

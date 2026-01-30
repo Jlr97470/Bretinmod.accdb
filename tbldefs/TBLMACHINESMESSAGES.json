@@ -1,0 +1,13 @@
+﻿{
+  "Info": {
+    "Class": "clsDbTableDef",
+    "Description": "Linked Table"
+  },
+  "Items": {
+    "Name": "TBLMACHINESMESSAGES",
+    "Connect": ";DATABASE=rel:Bretinfich.accdb",
+    "SourceTableName": "TBLMACHINESMESSAGES",
+    "Attributes": 1073741824,
+    "PrimaryKey": "[MacMesExpNom], [MacMesExpUtilisateur], [MacMesExpDomaine], [MacMesExpDate], [MacMesExpHeure]"
+  }
+}

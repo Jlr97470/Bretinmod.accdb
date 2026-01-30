@@ -1,0 +1,13 @@
+﻿{
+  "Info": {
+    "Class": "clsDbTableDef",
+    "Description": "Linked Table"
+  },
+  "Items": {
+    "Name": "TBLCHAUDIERESINTERVENTIONS",
+    "Connect": ";DATABASE=rel:Bretinfich.accdb",
+    "SourceTableName": "TBLCHAUDIERESINTERVENTIONS",
+    "Attributes": 1073741824,
+    "PrimaryKey": "[ChdIntCliChdNum], [-ChdIntDate], [-ChdIntNumero]"
+  }
+}

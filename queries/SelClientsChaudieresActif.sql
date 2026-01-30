@@ -1,0 +1,12 @@
+﻿SELECT
+  TBLCLIENTSCHAUDIERES.*
+FROM
+  TBLCLIENTSCHAUDIERES
+WHERE
+  (
+    (
+      (
+        TBLCLIENTSCHAUDIERES.CliChdActif
+      )= True
+    )
+  );

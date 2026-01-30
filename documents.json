@@ -1,0 +1,178 @@
+﻿{
+  "Info": {
+    "Class": "clsDbDocument",
+    "Description": "Database Documents Properties (DAO)"
+  },
+  "Items": {
+    "Databases": {
+      "SummaryInfo": {
+        "Author": "Royer Jean-Laurent",
+        "Company": "DeltaInformatique",
+        "Manager": "Bretin Damien",
+        "Subject": "Gestion De Suivi D'interventions Sur Des Chaudieres",
+        "Title": "Bretin Clients"
+      }
+    },
+    "Forms": {
+      "FrmAbout": {
+        "Description": "Formulaire D'Accueil Et D'Information"
+      },
+      "FrmFicheClients": {
+        "Description": "Formulaire De La Fiche Clients"
+      },
+      "FrmFusion": {
+        "Description": "Formulaire De Gestion Des Fichiers De Fusion"
+      },
+      "FrmGestionFichiers": {
+        "Description": "Formulaire De Gestion Des Fichiers Attachées"
+      },
+      "FrmGestionMail": {
+        "Description": "Formulaire De Gestion D'EMail"
+      },
+      "FrmGestionMessages": {
+        "Description": "Formulaire De Gestion De La Messagerie"
+      },
+      "FrmGestionParametres": {
+        "Description": "Formulaire De Gestion Des Parametres"
+      },
+      "FrmGestionParametresGenerals": {
+        "Description": "Formulaire De Gestion Des Parametres Generals"
+      },
+      "FrmLstChaudieres": {
+        "Description": "Formulaire De La Liste Des Chaudieres"
+      },
+      "FrmLstCivilites": {
+        "Description": "Formulaire De La Liste Des Civilites"
+      },
+      "FrmLstClients": {
+        "Description": "Formulaire De La Liste Des Clients"
+      },
+      "FrmLstContrats": {
+        "Description": "Formulaire De La Liste Des Contracts"
+      },
+      "FrmLstInterventions": {
+        "Description": "Formulaire De La Liste Des Interventions"
+      },
+      "FrmLstMachines": {
+        "Description": "Formulaire De La Liste Des Machines"
+      },
+      "FrmLstVilles": {
+        "Description": "Formulaire De La Liste Des Villes"
+      },
+      "FrmMailing": {
+        "Description": "Formulaire De Maling Simple"
+      },
+      "FrmMailingMulti": {
+        "Description": "Formulaire De Mailing Multi Critere"
+      },
+      "FrmMenuPrincipale": {
+        "Description": "Formulaire Du Menu Principale"
+      },
+      "FrmNotes": {
+        "Description": "Formulaire De Note"
+      },
+      "FrmRecherche": {
+        "Description": "Formulaire De Recherche"
+      },
+      "FrmRechercheMulti": {
+        "Description": "Formulaire De Recherche Multi Critére"
+      },
+      "SFrmFicheClientsChaudieres": {
+        "Description": "Sous Formulaire Clients Chaudieres\r\nUtiliser Par :\r\n- FrmFicheClients"
+      },
+      "SFrmFicheClientsChaudieresInterventions": {
+        "Description": "Sous Formulaire Clients Chaudieres Interventions\r\nUtiliser Par:\r\n- SFrmFicheClientsChaudieres"
+      },
+      "SFrmFicheClientsContrats": {
+        "Description": "Sous Formulaire Clients Contrats\r\nUtiliser Par :\r\n- FrmFicheClients"
+      }
+    },
+    "Modules": {
+      "ClsAgent": {
+        "Description": "Class De Gestion De L'Agent"
+      },
+      "ClsSendMailStatus": {
+        "Description": "Class De Gestion De Status De L'Object Send Mail"
+      },
+      "ModGestionAgent": {
+        "Description": "Module De Gestion De L'Agent"
+      },
+      "ModGestionBase": {
+        "Description": "Module De Gestion De La Base"
+      },
+      "ModGestionFichier": {
+        "Description": "Module De Gestion Des Fichiers"
+      },
+      "ModGestionFonctions": {
+        "Description": "Module De Gestion Des Fonctions"
+      },
+      "ModGestionImportsExports": {
+        "Description": "Module De Gestion Des Importations Et Exportations"
+      },
+      "ModGestionMessagerie": {
+        "Description": "Module De Gestion De La Messagerie"
+      }
+    },
+    "Scripts": {
+      "Autoexec": {
+        "Description": "Macro De Demarrage"
+      },
+      "Autokeys": {
+        "Description": "Macro De Raccourcis Clavier"
+      },
+      "MacMenuPrincipale": {
+        "Description": "Macro Du Menu"
+      }
+    },
+    "Tables": {
+      "SelClientsChaudieres": {
+        "Description": "Selection Des Clients Et Chaudieres\r\nUtiliser Par :\r\n- FrmLstChaudieres"
+      },
+      "SelClientsChaudieresActif": {
+        "Description": "Selection Des Clients Et Chaudieres Actif"
+      },
+      "SelClientsContrats": {
+        "Description": "Selection Des Clients Et Contrats\r\nUtiliser Par :\r\n- FrmLstContrats"
+      },
+      "SelClientsContratsActif": {
+        "Description": "Selection Des Clients Et Contrats Actif"
+      },
+      "SelClientsInterventions": {
+        "Description": "Selection Des Clients Et Interventions\r\nUtiliser Par :\r\n- FrmLstInterventions"
+      },
+      "SelClientsVilles": {
+        "Description": "Selection Des Clients Et Villes\r\nUtiliser Par :\r\n- FrmLstClients"
+      },
+      "SelFichiersDetailler": {
+        "Description": "Selection Des Fichiers Detailler\r\nUtiliser Par :\r\n- FrmGestionFichiers"
+      },
+      "SelFusClientsContrats": {
+        "Description": "Fusion Des Clients Et Contrats\r\nUtiliser Par :\r\n- FrmLstContrats"
+      },
+      "SelMailingClientsChaudieres": {
+        "Description": "Mailing Des Chaudieres"
+      },
+      "SelMailingClientsContrats": {
+        "Description": "Mailing Des Contrats"
+      },
+      "SelMailingClientsInterventions": {
+        "Description": "Mailing Des Interventions"
+      },
+      "SelMailingClientsVilles": {
+        "Description": "Mailing Des Clients"
+      },
+      "SelParametresDetailler": {
+        "Description": "Selection Des Parametres Detailler\r\nUtiliser Par :\r\n- ModGestionReferences"
+      },
+      "SelParametresGeneralsDetailler": {
+        "Description": "Selection Des Parametres Generals Detailler"
+      },
+      "TBLFICHIERS": {
+        "Description": "Liste Des Fichiers"
+      },
+      "TBLPARAMETRES": {
+        "Description": "Liste Des Parametres"
+      }
+    }
+  }
+}

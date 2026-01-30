@@ -1,0 +1,10 @@
+﻿SELECT
+  TBLCLIENTSCONTRATS.*
+FROM
+  TBLCLIENTSCONTRATS
+WHERE
+  (
+    (
+      (TBLCLIENTSCONTRATS.CliConActif)= True
+    )
+  );

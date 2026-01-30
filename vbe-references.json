@@ -1,0 +1,47 @@
+﻿{
+  "Info": {
+    "Class": "clsDbVbeReference",
+    "Description": "VBE References"
+  },
+  "Items": {
+    "DAO": {
+      "GUID": "{4AC9E1DA-5BAD-4AC7-86E3-24F4CDCECA28}",
+      "Version": "12.0"
+    },
+    "Office": {
+      "GUID": "{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}",
+      "Version": "2.8"
+    },
+    "Excel": {
+      "GUID": "{00020813-0000-0000-C000-000000000046}",
+      "Version": "1.9"
+    },
+    "Word": {
+      "GUID": "{00020905-0000-0000-C000-000000000046}",
+      "Version": "8.7"
+    },
+    "Scripting": {
+      "GUID": "{420B2830-E718-11CF-893D-00A0C9054228}",
+      "Version": "1.0"
+    },
+    "HHCTRLLib": {
+      "GUID": "{ADB880A2-D8FF-11CF-9377-00AA003B7A11}",
+      "Version": "4.0"
+    },
+    "IWshRuntimeLibrary": {
+      "GUID": "{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}",
+      "Version": "1.0"
+    },
+    "MSHTML": {
+      "GUID": "{3050F1C5-98B5-11CF-BB82-00AA00BDCE0B}",
+      "Version": "4.0"
+    },
+    "AgentObjects": {
+      "GUID": "{F5BE8BC2-7DE6-11D0-91FE-00C04FD701A5}",
+      "Version": "2.0"
+    },
+    "DeltaMod": {
+      "FullPath": "D:\\MES_SOURCES\\ACCESS\\SOURCES\\DELTAINFORMATIQUE\\ACCESS_2007-2016\\DELTA_INFORMATIQUE\\Delta-Mod.accdb"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Info": {
+    "Class": "clsDbTableDef",
+    "Description": "Linked Table"
+  },
+  "Items": {
+    "Name": "TBLCLIENTSCHAUDIERES",
+    "Connect": ";DATABASE=rel:Bretinfich.accdb",
+    "SourceTableName": "TBLCLIENTSCHAUDIERES",
+    "Attributes": 1073741824,
+    "PrimaryKey": "[CliChdRef]"
+  }
+}
