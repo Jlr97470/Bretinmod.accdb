@@ -1530,6 +1530,7 @@ Begin Form
                     TabIndex =12
                     Name ="CmdAjouterVillesUtilisateur"
                     Caption ="..."
+                    OnClick ="[Event Procedure]"
 
                     Overlaps =1
                 End
@@ -1723,6 +1724,7 @@ Begin Form
                     TabIndex =26
                     Name ="CmdAjouterVillesSouscripteur"
                     Caption ="..."
+                    OnClick ="[Event Procedure]"
 
                     Overlaps =1
                 End

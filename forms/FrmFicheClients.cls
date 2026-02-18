@@ -236,6 +236,150 @@ Err_Rafraichir:
    Resume Exit_Rafraichir
 End Sub
 
+'************************************************************************************************************
+' NAME : AjouteCivilite (FUNCTION)
+' INPUT : StrCivilite (String)
+' OUTPUT : Boolean
+' DESCRIPTION : Ouvre le formulaire des sexes
+'************************************************************************************************************
+Public Function AjouteCivilite(Optional ByVal StrCivilite As String) As Boolean
+   Dim IntEtat As Integer
+
+   On Error GoTo Err_AjouteCivilite
+
+   AjouteCivilite = True
+
+   Select Case DeltaMsgBox("Voulez Vous Crée Une Nouvelle Civilité ? ", vbYesNo, Screen.ActiveForm.Caption)
+      Case vbYes
+
+         DonneEtatFormulaire "FrmLstCivilite", IntEtat
+
+         Select Case IntEtat
+           Case ETATFORMULAIRE
+
+              Forms!FrmSexes.SetFocus
+
+              DoCmd.ApplyFilter , "CivCode=" & StrCivilite
+
+              DoCmd.RunCommand acCmdRecordsGoToNew
+
+              DoCmd.RunCommand acCmdWindowCascade
+
+           Case Else
+
+              DoCmd.OpenForm "FrmLstCivilite", acNormal, , , acFormAdd
+
+         End Select
+
+         Select Case StrCivilite
+            Case vbNullString
+
+            Case Else
+
+               Forms!FrmCivilite.TxtCivCode = StrCivilite
+
+         End Select
+
+      Case vbNo
+
+   End Select
+
+Exit_AjouteCivilite:
+
+   Exit Function
+
+Err_AjouteCivilite:
+
+   AjouteCivilite = False
+
+   Dim IntNumError As Long
+   Dim StrError As String
+
+   StrError = Err.Number & " " & Err.Description & vbCrLf
+
+   For IntNumError = 0 To Errors.Count - 1
+
+     StrError = StrError & Errors(IntNumError).Number & " " & Errors(IntNumError).Description & vbCrLf
+
+   Next IntNumError
+
+   AgtBretin.AfficheMessage StrError, vbCritical, "Form_FicheClients.AjouteSexes()"
+
+   Resume Exit_AjouteCivilite
+End Function
+
+'************************************************************************************************************
+' NAME : AjouteVilles (FUNCTION)
+' INPUT : StrCodePostal (String)
+' OUTPUT : Boolean
+' DESCRIPTION : Ouvre le formulaire des villes
+'************************************************************************************************************
+Public Function AjouteVilles(Optional ByVal StrCodePostal As String) As Boolean
+   Dim IntEtat As Integer
+
+   On Error GoTo Err_AjouteVilles
+
+   AjouteVilles = True
+
+   Select Case DeltaMsgBox("Voulez Vous Créer Une Nouvelle Ville ? ", vbYesNo, Screen.ActiveForm.Caption)
+      Case vbYes
+
+         DonneEtatFormulaire "FrmLstVilles", IntEtat
+
+         Select Case IntEtat
+            Case ETATFORMULAIRE
+
+               Forms!FrmLstVilles.SetFocus
+
+               DoCmd.ApplyFilter , "VilCodePostal=" & StrCodePostal
+
+               DoCmd.RunCommand acCmdRecordsGoToNew
+
+               DoCmd.RunCommand acCmdWindowCascade
+
+            Case Else
+
+               DoCmd.OpenForm "FrmLstVilles", acNormal, , , acFormAdd
+
+         End Select
+
+         Select Case StrCodePostal
+            Case vbNullString
+
+            Case Else
+
+               Forms!FrmLstVilles.TxtVilCodePostal = StrCodePostal
+
+         End Select
+
+      Case vbNo
+
+   End Select
+
+Exit_AjouteVilles:
+
+   Exit Function
+
+Err_AjouteVilles:
+
+   AjouteVilles = False
+
+   Dim IntNumError As Long
+   Dim StrError As String
+
+   StrError = Err.Number & " " & Err.Description & vbCrLf
+
+   For IntNumError = 0 To Errors.Count - 1
+
+     StrError = StrError & Errors(IntNumError).Number & " " & Errors(IntNumError).Description & vbCrLf
+
+   Next IntNumError
+
+   AgtBretin.AfficheMessage StrError, vbCritical, "FormFicheClients.AjouteVilles()"
+
+   Resume Exit_AjouteVilles
+End Function
+
 '******************************************************************************
 '***    Declaration D'Evenement Priver                                                        ***
 '******************************************************************************
@@ -1001,7 +1145,7 @@ Private Sub CmdAjouterCivilitesUtilisateur_Click()
 
    On Error GoTo Err_CmdAjouterCivilitesUtilisateur_Click
 
-   'AjouteCivilites
+   AjouteCivilites
 
 Exit_CmdAjouterCivilitesUtilisateur_Click:
 

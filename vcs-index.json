@@ -6,23 +6,23 @@
   "Items": {
     "MergeBuildDate": null,
     "FullBuildDate": null,
-    "ExportDate": "2026-01-30T04:05:46.000Z",
+    "ExportDate": "2026-02-18T09:25:59.000Z",
     "FullExportDate": "2026-01-30T04:05:46.000Z",
     "OptionsHash": "397c939",
     "LastMergedCommit": "",
     "Components": {
       "CommandBars": {
         "Menu Bretin Clients.json": {
-          "FileHash": "582c63b",
-          "ExportDate": "2026-01-30T04:05:41.000Z",
+          "FileHash": "1e8744e",
+          "ExportDate": "2026-02-18T09:25:46.000Z",
           "SourceModified": null,
-          "FilePropertiesHash": "11ecf40"
+          "FilePropertiesHash": "6f10692"
         },
         "Outil Bretin Clients.json": {
-          "FileHash": "a55e83e",
-          "ExportDate": "2026-01-30T04:05:35.000Z",
+          "FileHash": "ac38e35",
+          "ExportDate": "2026-02-18T09:25:38.000Z",
           "SourceModified": null,
-          "FilePropertiesHash": "64f663e"
+          "FilePropertiesHash": "a73e7bd"
         }
       },
       "DB Connections": {
@@ -54,11 +54,11 @@
           "FilePropertiesHash": "6e58301"
         },
         "FrmFicheClients.bas": {
-          "FileHash": "8383b62",
-          "OtherHash": "91c64f6",
-          "ExportDate": "2026-01-30T04:05:45.000Z",
+          "FileHash": "25e4356",
+          "OtherHash": "dc80288",
+          "ExportDate": "2026-02-18T09:25:47.000Z",
           "SourceModified": null,
-          "FilePropertiesHash": "26eeb03"
+          "FilePropertiesHash": "6981a59"
         },
         "FrmFusion.bas": {
           "FileHash": "304e824",
