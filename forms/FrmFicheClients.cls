@@ -236,38 +236,59 @@ Err_Rafraichir:
    Resume Exit_Rafraichir
 End Sub
 
-'************************************************************************************************************
-' NAME : AjouteCivilite (FUNCTION)
-' INPUT : StrCivilite (String)
-' OUTPUT : Boolean
-' DESCRIPTION : Ouvre le formulaire des sexes
-'************************************************************************************************************
-Public Function AjouteCivilite(Optional ByVal StrCivilite As String) As Boolean
+'******************************************************************************
+'***    FONCTION:                                                                                       ***
+'******************************************************************************
+'***    FONCTION:                                                                                       ***
+'******************************************************************************
+'***    ENTREE:                                                                                          ***
+'***    SORTIE:                                                                                           ***
+'******************************************************************************
+'***    EXEMPLE:                                                                                        ***
+'******************************************************************************
+Public Function AjouteCivilites(Optional ByVal StrCivilite As String) As Boolean
    Dim IntEtat As Integer
 
-   On Error GoTo Err_AjouteCivilite
+   On Error GoTo Err_AjouteCivilites
 
-   AjouteCivilite = True
+   AjouteCivilites = True
 
-   Select Case MsgBox("Voulez Vous Crée Une Nouvelle Civilité ? ", vbYesNo, Screen.ActiveForm.Caption)
+   Select Case AgtBretin.AfficheMessage("Voulez Vous Crée Une Nouvelle Civilité ? ", vbYesNo, Screen.ActiveForm.Caption)
       Case vbYes
 
-         DonneEtatFormulaire "FrmLstCivilite", IntEtat
+         DonneEtatFormulaire "FrmLstCivilites", IntEtat
 
          Select Case IntEtat
            Case ETATFORMULAIRE
 
-              Forms!FrmSexes.SetFocus
+               Forms!FrmLstCivilites.SetFocus
 
-              DoCmd.ApplyFilter , "CivCode=" & StrCivilite
+               On Error Resume Next
 
-              DoCmd.RunCommand acCmdRecordsGoToNew
+               DoCmd.ApplyFilter , "CivCode=" & StrCivilite
 
-              DoCmd.RunCommand acCmdWindowCascade
+               Select Case Err.Number
+                  Case 0
+
+                  Case 2501
+
+                     Err.Clear
+
+                  Case Else
+
+                     GoTo Err_AjouteCivilites
+
+               End Select
+
+               GoTo Err_AjouteCivilites
+
+               DoCmd.RunCommand acCmdRecordsGoToNew
+
+               DoCmd.RunCommand acCmdWindowCascade
 
            Case Else
 
-              DoCmd.OpenForm "FrmLstCivilite", acNormal, , , acFormAdd
+              DoCmd.OpenForm "FrmLstCivilites", acNormal, , , acFormAdd
 
          End Select
 
@@ -276,7 +297,7 @@ Public Function AjouteCivilite(Optional ByVal StrCivilite As String) As Boolean
 
             Case Else
 
-               Forms!FrmCivilite.TxtCivCode = StrCivilite
+               Forms!FrmLstCivilites.TxtCivCode = StrCivilite
 
          End Select
 
@@ -284,28 +305,17 @@ Public Function AjouteCivilite(Optional ByVal StrCivilite As String) As Boolean
 
    End Select
 
-Exit_AjouteCivilite:
+Exit_AjouteCivilites:
 
    Exit Function
 
-Err_AjouteCivilite:
+Err_AjouteCivilites:
 
-   AjouteCivilite = False
+   AjouteCivilites = False
 
-   Dim IntNumError As Long
-   Dim StrError As String
+   AgtBretin.AfficheMessage Err.Number & " " & Err.Description, , "AjouteCivilites"
 
-   StrError = Err.Number & " " & Err.Description & vbCrLf
-
-   For IntNumError = 0 To Errors.Count - 1
-
-     StrError = StrError & Errors(IntNumError).Number & " " & Errors(IntNumError).Description & vbCrLf
-
-   Next IntNumError
-
-   AgtBretin.AfficheMessage StrError, vbCritical, "Form_FicheClients.AjouteSexes()"
-
-   Resume Exit_AjouteCivilite
+   Resume Exit_AjouteCivilites
 End Function
 
 '************************************************************************************************************
@@ -321,7 +331,7 @@ Public Function AjouteVilles(Optional ByVal StrCodePostal As String) As Boolean
 
    AjouteVilles = True
 
-   Select Case MsgBox("Voulez Vous Créer Une Nouvelle Ville ? ", vbYesNo, Screen.ActiveForm.Caption)
+   Select Case AgtBretin.AfficheMessage("Voulez Vous Créer Une Nouvelle Ville ? ", vbYesNo, Screen.ActiveForm.Caption)
       Case vbYes
 
          DonneEtatFormulaire "FrmLstVilles", IntEtat
@@ -1170,7 +1180,7 @@ Private Sub CmdAjouterCivilitesSouscripteur_Click()
 
    On Error GoTo Err_CmdAjouterCivilitesSouscripteur_Click
 
-   'AjouteCivilites
+   AjouteCivilites
 
 Exit_CmdAjouterCivilitesSouscripteur_Click:
 
