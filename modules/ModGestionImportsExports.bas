@@ -1,6 +1,6 @@
 ﻿Attribute VB_Name = "ModGestionImportsExports"
 '******************************************************************************
-'***    DeltaInformatique Copyright                                                              ***
+'***     Copyright                                                                       ***
 '******************************************************************************
 '***    MODULE:                                                                                          ***
 '******************************************************************************
@@ -16,7 +16,7 @@
 Option Explicit
 
 '******************************************************************************
-'***    FONCTION :                                                                                      ***
+'***    Declaration De Fonction Public                                                          ***
 '******************************************************************************
 
 '******************************************************************************
@@ -39,7 +39,9 @@ Public Function ExporteExcelRequete(ByVal StrSQL As String) As Boolean
 
    ExporteExcelRequete = True
 
-   TraitementInit
+   DoCmd.Hourglass True
+
+   DoCmd.OpenForm "FrmGestionTraitements", acNormal, , , acFormEdit, acWindowNormal
 
    TxtFonTraitements = "ExporteExcelRequete"
 
@@ -56,7 +58,7 @@ Public Function ExporteExcelRequete(ByVal StrSQL As String) As Boolean
 
          On Error Resume Next
 
-         TxtTitTraitements = IIf(RsRequete.Properties("Description").Value = vbNullString, "Exportation Excel", RsRequete.Properties("Description").Value)
+         TxtTitTraitements = RsRequete.Properties("Description").Value
 
          Select Case Err.Number
             Case vbEmpty
@@ -96,7 +98,7 @@ Public Function ExporteExcelRequete(ByVal StrSQL As String) As Boolean
 
          On Error Resume Next
 
-         WstFeuille.Name = Left(IIf(RsRequete.Properties("Description").Value = vbNullString, "Exportation Excel", RsRequete.Properties("Description").Value), 31)
+         WstFeuille.Name = Left(RsRequete.Properties("Description").Value, 31)
 
          Select Case Err.Number
             Case vbEmpty
@@ -121,7 +123,9 @@ Public Function ExporteExcelRequete(ByVal StrSQL As String) As Boolean
 
 Exit_ExporteExcelRequete:
 
-   TraitementClose
+   DoCmd.Close acForm, "FrmGestionTraitements"
+
+   DoCmd.Hourglass False
 
    Set RsRequete = Nothing
 
@@ -137,7 +141,7 @@ Err_ExporteExcelRequete:
 
    ExporteExcelRequete = False
 
-   AgtBretin.AfficheMessage Err.Number & " " & Err.Description, , "ExporteExcelRequete"
+   MsgBox Err.Number & " " & Err.Description, , "ExporteExcelRequete"
 
    Resume Exit_ExporteExcelRequete
 End Function
@@ -154,13 +158,17 @@ End Function
 '******************************************************************************
 Public Function ExporteExcelRequeteDonner(ByRef WstFeuille As Worksheet, ByRef RsRequete As DAO.Recordset, ByVal LngPosCol As Long, ByVal LngPosLig As Long) As Boolean
    Dim FldChamp As DAO.Field
+   Dim HypChamp As Excel.Hyperlinks
    Dim LngPosColChamp As Long
+   Dim LngPosLigChamp As Long
 
    On Error GoTo Err_ExporteExcelRequeteDonner
 
    ExporteExcelRequeteDonner = True
 
-   TraitementInit
+   DoCmd.Hourglass True
+
+   DoCmd.OpenForm "FrmGestionTraitements", acNormal, , , acFormEdit, acWindowNormal
 
    TxtFonTraitements = "ExporteExcelRequeteDonner"
 
@@ -172,7 +180,7 @@ Public Function ExporteExcelRequeteDonner(ByRef WstFeuille As Worksheet, ByRef R
 
          On Error Resume Next
 
-         .Cells(LngPosLig, LngPosCol).Value = IIf(RsRequete.Properties("Description").Value = vbNullString, "Exportation Excel", RsRequete.Properties("Description").Value)
+         .Cells(LngPosLig, LngPosCol).Value = RsRequete.Properties("Description").Value
 
          Select Case Err.Number
             Case vbEmpty
@@ -197,21 +205,19 @@ Public Function ExporteExcelRequeteDonner(ByRef WstFeuille As Worksheet, ByRef R
 
          LngPosColChamp = vbEmpty
 
-         TxtValeurTraitementsGlobalMin = 0
+         PbrTraitements.Min = 0
 
-         TxtValeurTraitementsGlobalValeur = 0
+         PbrTraitements.Value = 1
 
-         TxtValeurTraitementsGlobalMax = RsRequete.Fields.Count
+         PbrTraitements.Max = RsRequete.Fields.Count
 
-         TxtObjTraitements = "Nombre D'Enregistrements : " & RsRequete.Fields.Count
-
-         TraitementRafraichir
+         DoEvents
 
          For Each FldChamp In RsRequete.Fields
 
             On Error Resume Next
 
-            .Cells(LngPosLig + 1, LngPosCol + LngPosColChamp).Value = IIf(FldChamp.Properties("Description").Value = vbNullString, FldChamp.Name, FldChamp.Properties("Description").Value)
+            .Cells(LngPosLig + 1, LngPosCol + LngPosColChamp).Value = FldChamp.Properties("Description").Value
 
             Select Case Err.Number
                Case vbEmpty
@@ -236,9 +242,9 @@ Public Function ExporteExcelRequeteDonner(ByRef WstFeuille As Worksheet, ByRef R
 
             TxtObjTraitements = "Exportation Des Libelles Des Champs : " & FldChamp.Name
 
-            TxtValeurTraitementsGlobalValeur = LngPosColChamp
+            PbrTraitements.Value = LngPosColChamp
 
-            TraitementRafraichir
+            DoEvents
 
          Next
 
@@ -262,13 +268,13 @@ Public Function ExporteExcelRequeteDonner(ByRef WstFeuille As Worksheet, ByRef R
 
          TxtObjTraitements = "Mise En Forme De La Feuille Excel"
 
-         TxtValeurTraitementsGlobalMin = 0
+         PbrTraitements.Min = 0
 
-         TxtValeurTraitementsGlobalValeur = 0
+         PbrTraitements.Max = RsRequete.Fields.Count
 
-         TxtValeurTraitementsGlobalMax = RsRequete.Fields.Count
+         PbrTraitements.Value = 1
 
-         TraitementRafraichir
+         DoEvents
 
          For Each FldChamp In RsRequete.Fields
 
@@ -291,17 +297,63 @@ Public Function ExporteExcelRequeteDonner(ByRef WstFeuille As Worksheet, ByRef R
 
                Case Else
 
-                  .Range(.Cells(LngPosLig + 2, LngPosCol + LngPosColChamp), .Cells(LngPosLig + 2 + RsRequete.RecordCount - 1, LngPosCol + LngPosColChamp)).NumberFormat = FldChamp.Properties("Format")
-
             End Select
 
             On Error GoTo Err_ExporteExcelRequeteDonner
+
+            Select Case InStr(1, FldChamp.Name, "EMail")
+               Case 0
+
+               Case Else
+
+                  For LngPosLigChamp = 0 To RsRequete.RecordCount - 1
+
+                     Select Case InStr(1, .Cells(LngPosLig + 2 + LngPosLigChamp, LngPosCol + LngPosColChamp).Value, "#")
+                        Case 0
+
+                        Case Else
+
+                           .Cells(LngPosLig + 2 + LngPosLigChamp, LngPosCol + LngPosColChamp).Value = Left(.Cells(LngPosLig + 2 + LngPosLigChamp, LngPosCol + LngPosColChamp).Value, InStr(1, .Cells(LngPosLig + 2 + LngPosLigChamp, LngPosCol + LngPosColChamp).Value, "#") - 1)
+
+                     End Select
+
+                     Set HypChamp = .Cells(LngPosLig + 2 + LngPosLigChamp, LngPosCol + LngPosColChamp).Hyperlinks
+
+                     HypChamp.Add .Cells(LngPosLig + 2 + LngPosLigChamp, LngPosCol + LngPosColChamp), "mailto:" & .Cells(LngPosLig + 2 + LngPosLigChamp, LngPosCol + LngPosColChamp).Value
+
+                  Next
+
+            End Select
+
+            Select Case InStr(1, FldChamp.Name, "Web")
+               Case 0
+
+               Case Else
+
+                  For LngPosLigChamp = 0 To RsRequete.RecordCount - 1
+
+                     Select Case InStr(1, .Cells(LngPosLig + 2 + LngPosLigChamp, LngPosCol + LngPosColChamp).Value, "#")
+                        Case 0
+
+                        Case Else
+
+                           .Cells(LngPosLig + 2 + LngPosLigChamp, LngPosCol + LngPosColChamp).Value = Left(.Cells(LngPosLig + 2 + LngPosLigChamp, LngPosCol + LngPosColChamp).Value, InStr(1, .Cells(LngPosLig + 2 + LngPosLigChamp, LngPosCol + LngPosColChamp).Value, "#") - 1)
+
+                     End Select
+
+                     Set HypChamp = .Cells(LngPosLig + 2 + LngPosLigChamp, LngPosCol + LngPosColChamp).Hyperlinks
+
+                     HypChamp.Add .Cells(LngPosLig + 2 + LngPosLigChamp, LngPosCol + LngPosColChamp), "http://" & .Cells(LngPosLig + 2 + LngPosLigChamp, LngPosCol + LngPosColChamp).Value
+
+                  Next
+
+            End Select
 
             .Columns(LngPosCol + LngPosColChamp).AutoFit
 
             LngPosColChamp = LngPosColChamp + 1
 
-            TxtValeurTraitementsGlobalValeur = LngPosColChamp
+            PbrTraitements.Value = LngPosColChamp
 
             DoEvents
 
@@ -319,7 +371,11 @@ Public Function ExporteExcelRequeteDonner(ByRef WstFeuille As Worksheet, ByRef R
 
 Exit_ExporteExcelRequeteDonner:
 
-   TraitementClose
+   DoCmd.Close acForm, "FrmGestionTraitements"
+
+   DoCmd.Hourglass False
+
+   Set HypChamp = Nothing
 
    Exit Function
 
@@ -327,7 +383,7 @@ Err_ExporteExcelRequeteDonner:
 
    ExporteExcelRequeteDonner = False
 
-   AgtBretin.AfficheMessage Err.Number & " " & Err.Description, , "ExporteExcelRequeteDonner"
+   MsgBox Err.Number & " " & Err.Description, , "ExporteExcelRequeteDonner"
 
    Resume Exit_ExporteExcelRequeteDonner
 End Function
@@ -343,20 +399,17 @@ End Function
 '***    EXEMPLE:                                                                                        ***
 '******************************************************************************
 Public Function FusionWordRequete(ByVal StrSQL As String, ByVal StrFichier As String) As Boolean
-   Dim BolFormFerme As Boolean
-   Dim IntFormEtat As Integer
-   Dim StrRequeteNom As String
-   Dim StrCheminFichierAppWord As String
-   Dim StrCheminFichierWord As String
+   Dim WshShellSystem As New IWshRuntimeLibrary.WshShell
    Dim AppWord As Word.Application
    Dim DocWord As Word.Document
    Dim MerWord As Word.MailMerge
    Dim TdfRequete As DAO.QueryDef
    Dim TdsRequete As DAO.QueryDefs
+   Dim StrRequeteNom As String
+   Dim StrCheminFichierAppWord As String
+   Dim StrCheminFichierWord As String
 
    On Error GoTo Err_FusionWordRequete
-
-   TraitementInit
 
    Set AppWord = CreateObject("Word.Application")
 
@@ -431,7 +484,7 @@ Public Function FusionWordRequete(ByVal StrSQL As String, ByVal StrFichier As St
 
 Exit_FusionWordRequete:
 
-   TraitementClose
+   Set WshShellSystem = Nothing
 
    Set MerWord = Nothing
 
@@ -451,7 +504,7 @@ Exit_FusionWordRequete:
 
 Err_FusionWordRequete:
 
-   AgtBretin.AfficheMessage Err.Number & " " & Err.Description, , "FusionWordRequete"
+   MsgBox Err.Number & " " & Err.Description, , "FusionWordRequete"
 
    Resume Exit_FusionWordRequete
 End Function
@@ -504,10 +557,340 @@ End Function
 '******************************************************************************
 '***    EXEMPLE:                                                                                        ***
 '******************************************************************************
+Public Function MailingJavaMailRequete(ByVal StrEmailExpediteur As String, ByVal StrEmailCopieCacher As String, ByVal StrSQLRequete As String, ByVal StrChampDestination As String, ByVal StrSujet As String, ByVal StrFichierBody As String, ByRef StrFichierAttache() As String, ByVal BlnSimulation As Boolean) As Boolean
+   Dim FsoSystem As Scripting.FileSystemObject
+   Dim FilFichier As Scripting.File
+   Dim JavaMsg As Object
+   Dim HtmObjectDocument As MSHTML.HTMLDocument
+   Dim HtmDocument As MSHTML.HTMLDocument
+   Dim RsRequete As DAO.Recordset
+   Dim RsFichier As DAO.Recordset
+   Dim StrEmailFrom As String
+   Dim StrAttacheID As String
+   Dim StrAttacheFichier As String
+   Dim StrDocument As String
+   Dim StrCheminFichierBody As String
+   Dim StrChampNom As String
+   Dim IntNb As Integer
+   Dim IntPosDebut As Integer
+   Dim IntPosFin As Integer
+
+   On Error GoTo Err_MailingJavaMailRequete
+
+   MailingJavaMailRequete = True
+
+   DoCmd.Hourglass True
+
+   DoCmd.OpenForm "FrmNotes", acNormal, , , acFormEdit, acWindowNormal
+
+   DoCmd.OpenForm "FrmGestionTraitements", acNormal, , , acFormEdit, acWindowNormal
+
+   TxtTitTraitements = "Mailing : " & StrSujet
+
+   TxtFonTraitements = "MailingJavaMailRequete"
+
+   TxtObjTraitements = StrSQLRequete
+
+   DoEvents
+
+   Set RsFichier = CurrentDb.OpenRecordset("SELECT SelFichiersDetailler.* FROM SelFichiersDetailler WHERE FicCode2='" & StrFichierBody & "' AND FicValide=True")
+
+   Select Case RsFichier.EOF
+      Case True
+
+      Case False
+
+         StrCheminFichierBody = RsFichier!FicValeur & "\" & RsFichier!FicCode2
+
+         RsFichier.Close
+
+         Set RsRequete = CurrentDb.OpenRecordset(StrSQLRequete)
+
+         Select Case RsRequete.EOF
+            Case True
+
+            Case False
+
+               Set HtmObjectDocument = New MSHTML.HTMLDocument
+
+               Set HtmDocument = HtmObjectDocument.createDocumentFromUrl(StrCheminFichierBody, vbNullString)
+
+               Do Until HtmDocument.readyState = "complete"
+
+                  DoEvents
+
+               Loop
+
+               Set JavaMsg = CreateObject("jmail.Message")
+
+               TxtObjTraitements = "CONNEXION " & vbCrLf
+
+               JavaMsg.from = StrEmailExpediteur
+
+               JavaMsg.Subject = StrSujet
+
+               JavaMsg.AppendText ("Apparemment, votre logiciel d'email ne supporte pas le format HTML.")
+
+               JavaMsg.Priority = 3
+
+               JavaMsg.ReturnReceipt = True
+
+               JavaMsg.Logging = True
+
+               JavaMsg.MailServerUserName = vbNullString
+
+               JavaMsg.MailServerPassWord = vbNullString
+
+               Set FsoSystem = New Scripting.FileSystemObject
+
+               Select Case HtmDocument.images.Length
+                  Case 0
+
+                  Case Else
+
+                     For IntNb = 0 To HtmDocument.images.Length - 1
+
+                        StrAttacheFichier = RemplaceChr(RemplaceChr(RemplaceChr(HtmDocument.images(IntNb).src, "file:///", vbNullString), "%20", " "), "/", "\")
+
+                        Select Case FsoSystem.FileExists(StrAttacheFichier)
+                           Case True
+
+                              StrAttacheID = JavaMsg.AddAttachment(StrAttacheFichier, True)
+
+                              Set FilFichier = FsoSystem.GetFile(StrAttacheFichier)
+
+                              HtmDocument.images(IntNb).src = "cid:" & StrAttacheID
+
+                           Case False
+
+                        End Select
+
+                     Next
+
+               End Select
+
+               On Error Resume Next
+
+               Select Case StrFichierAttache(LBound(StrFichierAttache))
+                  Case vbNullString
+
+                  Case Else
+
+                     For IntNb = LBound(StrFichierAttache) To UBound(StrFichierAttache)
+
+                        StrAttacheFichier = StrFichierAttache(IntNb)
+
+                        Select Case FsoSystem.FileExists(StrAttacheFichier)
+                           Case True
+
+                              JavaMsg.AddCustomAttachment StrAttacheFichier, Right(StrAttacheFichier, Len(StrAttacheFichier) - InStrRev(StrAttacheFichier, "\")), False
+
+                           Case False
+
+                        End Select
+
+                     Next
+
+               End Select
+
+               Select Case Err.Number
+                  Case vbEmpty
+
+                  Case Else
+
+                     Err.Clear
+
+               End Select
+
+               On Error GoTo Err_MailingJavaMailRequete
+
+               RsRequete.MoveLast
+
+               RsRequete.MoveFirst
+
+               PbrTraitements.Min = 0
+
+               PbrTraitements.Value = 0
+
+               PbrTraitements.Max = RsRequete.RecordCount
+
+               Do Until RsRequete.EOF = True
+
+                  JavaMsg.ClearRecipients
+
+                  Select Case BlnSimulation
+                        Case True
+
+                        Case False
+
+                           JavaMsg.AddRecipientBCC StrEmailCopieCacher
+
+                  End Select
+
+                  Select Case IsNull(RsRequete(StrChampDestination))
+                     Case False
+
+                        Select Case InStr(1, RsRequete(StrChampDestination), "mailto:")
+                           Case Is <= 0
+
+                              Select Case InStr(1, RsRequete(StrChampDestination), "#")
+                                 Case Is <= 0
+
+                                    StrEmailFrom = RsRequete(StrChampDestination)
+
+                                 Case Else
+
+                                    StrEmailFrom = Left(RsRequete(StrChampDestination), InStr(1, RsRequete(StrChampDestination), "#") - 1)
+
+                              End Select
+
+                           Case Else
+
+                              StrEmailFrom = RemplaceChr(Mid(RsRequete(StrChampDestination), InStr(1, RsRequete(StrChampDestination), "mailto:") + 7), "#", vbNullString)
+
+                        End Select
+
+                        Select Case BlnSimulation
+                           Case True
+
+                              JavaMsg.AddRecipient StrEmailExpediteur
+
+                              JavaMsg.Subject = StrSujet & " (" & StrEmailFrom & ")"
+
+                           Case False
+
+                              JavaMsg.AddRecipient StrEmailFrom
+
+                        End Select
+
+                        StrDocument = "<HTML>" & vbCrLf & HtmDocument.documentElement.innerHTML & vbCrLf & "</HTML>"
+
+                        IntPosDebut = 1
+
+                        Do Until InStr(IntPosDebut, StrDocument, "<D VALUE=") <= 0
+
+                           IntPosDebut = InStr(IntPosDebut, StrDocument, "<D VALUE=")
+
+                           IntPosFin = InStr(IntPosDebut, StrDocument, ">")
+
+                           StrChampNom = RemplaceChr(Mid(StrDocument, IntPosDebut + 10, IntPosFin - IntPosDebut - 11), Chr$(34), "")
+
+                           IntPosFin = InStr(IntPosDebut, StrDocument, "</D>")
+
+                           On Error Resume Next
+
+                           StrDocument = Left(StrDocument, IntPosDebut - 1) & RsRequete(StrChampNom) & Mid(StrDocument, IntPosFin + 4)
+
+                           Select Case Err.Number
+                              Case vbEmpty
+
+                              Case Else
+
+                                 Err.Clear
+
+                                 IntPosDebut = IntPosFin
+
+                           End Select
+
+                           On Error GoTo Err_MailingJavaMailRequete
+
+                        Loop
+
+                        JavaMsg.HTMLBody = StrDocument
+
+                     Case True
+
+                  End Select
+
+                  PbrTraitements.Value = PbrTraitements.Value + 1
+
+                 Select Case BlnSimulation
+                     Case True
+
+                        TxtObjTraitements = PbrTraitements.Value & "/" & RsRequete.RecordCount & " Envoie Mail a  : " & StrEmailExpediteur & "(" & StrEmailFrom & ")" & vbCrLf
+
+                        TxtNotesTraitements = TxtNotesTraitements & PbrTraitements.Value & "/" & RsRequete.RecordCount & " Envoie Mail a  : " & StrEmailExpediteur & "(" & StrEmailFrom & ")" & vbCrLf
+
+                     Case False
+
+                        TxtObjTraitements = PbrTraitements.Value & "/" & RsRequete.RecordCount & " Envoie Mail a  : " & StrEmailFrom & vbCrLf
+
+                        TxtNotesTraitements = TxtNotesTraitements & PbrTraitements.Value & "/" & RsRequete.RecordCount & " Envoie Mail a  : " & StrEmailFrom & vbCrLf
+
+                  End Select
+
+                  Select Case JavaMsg.Send("172.23.4.201")
+                     Case True
+
+                        TxtNotesTraitements = TxtNotesTraitements & JavaMsg.Log & vbCrLf
+
+                        TxtNotesTraitements = TxtNotesTraitements & "Reussi" & vbCrLf
+
+                     Case False
+
+                        TxtNotesTraitements = TxtNotesTraitements & JavaMsg.Log & vbCrLf
+
+                        TxtNotesTraitements = TxtNotesTraitements & "Echec" & vbCrLf
+
+                  End Select
+
+                  DoEvents
+
+                  RsRequete.MoveNext
+
+               Loop
+
+         End Select
+
+         RsRequete.Close
+
+   End Select
+
+Exit_MailingJavaMailRequete:
+
+   DoCmd.Close acForm, "FrmGestionTraitements", acSaveYes
+
+   DoCmd.Hourglass False
+
+   Set FsoSystem = Nothing
+
+   Set FilFichier = Nothing
+
+   Set HtmObjectDocument = Nothing
+
+   Set HtmDocument = Nothing
+
+   Set JavaMsg = Nothing
+
+   Set RsFichier = Nothing
+
+   Set RsRequete = Nothing
+
+   Exit Function
+
+Err_MailingJavaMailRequete:
+
+   MailingJavaMailRequete = False
+
+   MsgBox Err.Number & " " & Err.Description, , "MailingJavaMailRequete"
+
+   Resume Exit_MailingJavaMailRequete
+End Function
+
+'******************************************************************************
+'***    FONCTION:                                                                                       ***
+'******************************************************************************
+'***    FONCTION:                                                                                       ***
+'******************************************************************************
+'***    ENTREE:                                                                                          ***
+'***    SORTIE:                                                                                           ***
+'******************************************************************************
+'***    EXEMPLE:                                                                                        ***
+'******************************************************************************
 Public Function MailingSendMailRequete(ByVal StrEmailExpediteur As String, ByVal StrEmailCopieCacher As String, ByVal StrSQLRequete As String, ByVal StrChampDestination As String, ByVal StrSujet As String, ByVal StrFichierBody As String, ByRef StrFichierAttache() As String, ByVal BlnSimulation As Boolean) As Boolean
    Dim FsoSystem As Scripting.FileSystemObject
    Dim FilFichier As Scripting.File
-   Dim SndMsg As Object 'clsSendMail
+   Dim SndMsg As Object
    Dim SndMsgStatus As ClsSendMailStatus
    Dim HtmObjectDocument As MSHTML.HTMLDocument
    Dim HtmDocument As MSHTML.HTMLDocument
@@ -527,7 +910,11 @@ Public Function MailingSendMailRequete(ByVal StrEmailExpediteur As String, ByVal
 
    MailingSendMailRequete = True
 
-   TraitementInit
+   DoCmd.Hourglass True
+
+   DoCmd.OpenForm "FrmNotes", acNormal, , , acFormEdit, acWindowNormal
+
+   DoCmd.OpenForm "FrmGestionTraitements", acNormal, , , acFormEdit, acWindowNormal
 
    TxtTitTraitements = "Mailing : " & StrSujet
 
@@ -565,11 +952,11 @@ Public Function MailingSendMailRequete(ByVal StrEmailExpediteur As String, ByVal
 
                Loop
 
-               'Set SndMsg = New clsSendMail
+               Set SndMsg = CreateObject("clsSendMail")
 
-               'SndMsg.SMTPHostValidation = VALIDATE_NONE
+               SndMsg.SMTPHostValidation = 0
 
-               'SndMsg.EmailAddressValidation = VALIDATE_SYNTAX
+               SndMsg.EmailAddressValidation = 0
 
                SndMsg.Delimiter = ";"
 
@@ -596,9 +983,9 @@ Public Function MailingSendMailRequete(ByVal StrEmailExpediteur As String, ByVal
 
                SndMsg.ContentBase = vbNullString
 
-               'SndMsg.EncodeType = MIME_ENCODE
+               SndMsg.EncodeType = 1
 
-               'SndMsg.Priority = NORMAL_PRIORITY
+               SndMsg.Priority = 0
 
                SndMsg.Receipt = True
 
@@ -698,99 +1085,106 @@ Public Function MailingSendMailRequete(ByVal StrEmailExpediteur As String, ByVal
 
                RsRequete.MoveFirst
 
-               TxtValeurTraitementsGlobalMin = 0
+               PbrTraitements.Min = 0
 
-               TxtValeurTraitementsGlobalValeur = 0
+               PbrTraitements.Value = 0
 
-               TxtValeurTraitementsGlobalMax = RsRequete.RecordCount
+               PbrTraitements.Max = RsRequete.RecordCount
 
                Select Case SndMsg.Connect
                   Case True
 
                      Do Until RsRequete.EOF = True
 
-                        Select Case InStr(1, RsRequete(StrChampDestination), "mailto:")
-                           Case Is <= 0
+                        Select Case IsNull(RsRequete(StrChampDestination))
+                           Case False
 
-                              Select Case InStr(1, RsRequete(StrChampDestination), "#")
+                              Select Case InStr(1, RsRequete(StrChampDestination), "mailto:")
                                  Case Is <= 0
 
-                                    StrEmailFrom = RsRequete(StrChampDestination)
+                                    Select Case InStr(1, RsRequete(StrChampDestination), "#")
+                                       Case Is <= 0
+
+                                          StrEmailFrom = RsRequete(StrChampDestination)
+
+                                       Case Else
+
+                                          StrEmailFrom = Left(RsRequete(StrChampDestination), InStr(1, RsRequete(StrChampDestination), "#") - 1)
+
+                                    End Select
 
                                  Case Else
 
-                                    StrEmailFrom = Left(RsRequete(StrChampDestination), InStr(1, RsRequete(StrChampDestination), "#") - 1)
+                                    StrEmailFrom = RemplaceChr(Mid(RsRequete(StrChampDestination), InStr(1, RsRequete(StrChampDestination), "mailto:") + 7), "#", vbNullString)
 
                               End Select
 
-                           Case Else
+                              Select Case BlnSimulation
+                                 Case True
 
-                              StrEmailFrom = RemplaceChr(Mid(RsRequete(StrChampDestination), InStr(1, RsRequete(StrChampDestination), "mailto:") + 7), "#", vbNullString)
+                                    SndMsg.Recipient = StrEmailExpediteur
 
-                        End Select
+                                    SndMsg.Subject = StrSujet & " (" & StrEmailFrom & ")"
 
-                        Select Case BlnSimulation
+                                 Case False
+
+                                    SndMsg.Recipient = StrEmailFrom
+
+                              End Select
+
+                              StrDocument = "<HTML>" & vbCrLf & HtmDocument.documentElement.innerHTML & vbCrLf & "</HTML>"
+
+                              IntPosDebut = 1
+
+                              Do Until InStr(IntPosDebut, StrDocument, "<D VALUE=") <= 0
+
+                                 IntPosDebut = InStr(IntPosDebut, StrDocument, "<D VALUE=")
+
+                                 IntPosFin = InStr(IntPosDebut, StrDocument, ">")
+
+                                 StrChampNom = RemplaceChr(Mid(StrDocument, IntPosDebut + 10, IntPosFin - IntPosDebut - 11), Chr$(34), "")
+
+                                 IntPosFin = InStr(IntPosDebut, StrDocument, "</D>")
+
+                                 On Error Resume Next
+
+                                 StrDocument = Left(StrDocument, IntPosDebut - 1) & RsRequete(StrChampNom) & Mid(StrDocument, IntPosFin + 4)
+
+                                 Select Case Err.Number
+                                    Case vbEmpty
+
+                                    Case Else
+
+                                       Err.Clear
+
+                                       IntPosDebut = IntPosFin
+
+                                 End Select
+
+                                 On Error GoTo Err_MailingSendMailRequete
+
+                              Loop
+
+                              SndMsg.Message = StrDocument
+
                            Case True
 
-                              SndMsg.Recipient = StrEmailExpediteur
-
-                              SndMsg.Subject = StrSujet & " (" & StrEmailFrom & ")"
-
-                           Case False
-
-                              SndMsg.Recipient = StrEmailFrom
-
                         End Select
 
-                        StrDocument = "<HTML>" & vbCrLf & HtmDocument.documentElement.innerHTML & vbCrLf & "</HTML>"
-
-                        IntPosDebut = 1
-
-                        Do Until InStr(IntPosDebut, StrDocument, "<D Value=") <= 0
-
-                           IntPosDebut = InStr(IntPosDebut, StrDocument, "<D Value=")
-
-                           IntPosFin = InStr(IntPosDebut, StrDocument, ">")
-
-                           StrChampNom = Mid(StrDocument, IntPosDebut + 10, IntPosFin - IntPosDebut - 11)
-
-                           IntPosFin = InStr(IntPosDebut, StrDocument, "</D>")
-
-                           On Error Resume Next
-
-                           StrDocument = Left(StrDocument, IntPosDebut - 1) & RsRequete(StrChampNom) & Mid(StrDocument, IntPosFin + 4)
-
-                           On Error GoTo Err_MailingSendMailRequete
-
-                           Select Case Err.Number
-                              Case vbEmpty
-
-                              Case Else
-
-                                 Err.Clear
-
-                                 IntPosDebut = IntPosFin
-
-                           End Select
-
-                        Loop
-
-                        SndMsg.Message = StrDocument
-
-                        TxtValeurTraitementsGlobalValeur = TxtValeurTraitementsGlobalValeur + 1
+                        PbrTraitements.Value = PbrTraitements.Value + 1
 
                         Select Case BlnSimulation
                             Case True
 
-                               TxtObjTraitements = TxtValeurTraitementsGlobalValeur & "/" & RsRequete.RecordCount & " Envoie Mail a  : " & StrEmailExpediteur & "(" & StrEmailFrom & ")" & vbCrLf
+                               TxtObjTraitements = PbrTraitements.Value & "/" & RsRequete.RecordCount & " Envoie Mail a  : " & StrEmailExpediteur & "(" & StrEmailFrom & ")" & vbCrLf
 
-                               TxtNotesTraitements = TxtNotesTraitements & TxtValeurTraitementsGlobalValeur & "/" & RsRequete.RecordCount & " Envoie Mail a  : " & StrEmailExpediteur & "(" & StrEmailFrom & ")" & vbCrLf
+                               TxtNotesTraitements = TxtNotesTraitements & PbrTraitements.Value & "/" & RsRequete.RecordCount & " Envoie Mail a  : " & StrEmailExpediteur & "(" & StrEmailFrom & ")" & vbCrLf
 
                             Case False
 
-                               TxtObjTraitements = TxtValeurTraitementsGlobalValeur & "/" & RsRequete.RecordCount & " Envoie Mail a  : " & StrEmailFrom & vbCrLf
+                               TxtObjTraitements = PbrTraitements.Value & "/" & RsRequete.RecordCount & " Envoie Mail a  : " & StrEmailFrom & vbCrLf
 
-                               TxtNotesTraitements = TxtNotesTraitements & TxtValeurTraitementsGlobalValeur & "/" & RsRequete.RecordCount & " Envoie Mail a  : " & StrEmailFrom & vbCrLf
+                               TxtNotesTraitements = TxtNotesTraitements & PbrTraitements.Value & "/" & RsRequete.RecordCount & " Envoie Mail a  : " & StrEmailFrom & vbCrLf
 
                          End Select
 
@@ -814,7 +1208,9 @@ Public Function MailingSendMailRequete(ByVal StrEmailExpediteur As String, ByVal
 
 Exit_MailingSendMailRequete:
 
-   TraitementClose
+   DoCmd.Close acForm, "FrmGestionTraitements", acSaveYes
+
+   DoCmd.Hourglass False
 
    Set FsoSystem = Nothing
 
@@ -838,324 +1234,7 @@ Err_MailingSendMailRequete:
 
    MailingSendMailRequete = False
 
-   AgtBretin.AfficheMessage Err.Number & " " & Err.Description, , "MailingSendMailRequete"
+   MsgBox Err.Number & " " & Err.Description, , "MailingSendMailRequete"
 
    Resume Exit_MailingSendMailRequete
-End Function
-
-'******************************************************************************
-'***    FONCTION:                                                                                       ***
-'******************************************************************************
-'***    FONCTION:                                                                                       ***
-'******************************************************************************
-'***    ENTREE:                                                                                          ***
-'***    SORTIE:                                                                                           ***
-'******************************************************************************
-'***    EXEMPLE:                                                                                        ***
-'******************************************************************************
-Public Function MailingJavaMailRequete(ByVal StrEmailExpediteur As String, ByVal StrEmailCopieCacher As String, ByVal StrSQLRequete As String, ByVal StrChampDestination As String, ByVal StrSujet As String, ByVal StrFichierBody As String, ByRef StrFichierAttache() As String, ByVal BlnSimulation As Boolean) As Boolean
-   Dim FsoSystem As Scripting.FileSystemObject
-   Dim FilFichier As Scripting.File
-   Dim JavaMsg As Object 'jmail.Message
-   Dim HtmObjectDocument As MSHTML.HTMLDocument
-   Dim HtmDocument As MSHTML.HTMLDocument
-   Dim RsRequete As DAO.Recordset
-   Dim RsFichier As DAO.Recordset
-   Dim StrEmailFrom As String
-   Dim StrAttacheID As String
-   Dim StrAttacheFichier As String
-   Dim StrDocument As String
-   Dim StrCheminFichierBody As String
-   Dim StrChampNom As String
-   Dim IntNb As Integer
-   Dim IntPosDebut As Integer
-   Dim IntPosFin As Integer
-
-   On Error GoTo Err_MailingJavaMailRequete
-
-   MailingJavaMailRequete = True
-
-   TraitementInit
-
-   TxtTitTraitements = "Mailing : " & StrSujet
-
-   TxtFonTraitements = "MailingJavaMailRequete"
-
-   TxtObjTraitements = StrSQLRequete
-
-   DoEvents
-
-   Set RsFichier = CurrentDb.OpenRecordset("SELECT SelFichiersDetailler.* FROM SelFichiersDetailler WHERE FicCode2='" & StrFichierBody & "' AND FicValide=True")
-
-   Select Case RsFichier.EOF
-      Case True
-
-      Case False
-
-         StrCheminFichierBody = RsFichier!FicValeur & "\" & RsFichier!FicCode2
-
-         RsFichier.Close
-
-         Set RsRequete = CurrentDb.OpenRecordset(StrSQLRequete)
-
-         Select Case RsRequete.EOF
-            Case True
-
-            Case False
-
-               Set HtmObjectDocument = New MSHTML.HTMLDocument
-
-               Set HtmDocument = HtmObjectDocument.createDocumentFromUrl(StrCheminFichierBody, vbNullString)
-
-               Do Until HtmDocument.readyState = "complete"
-
-                  DoEvents
-
-               Loop
-
-               'Set JavaMsg = New jmail.Message
-
-               TxtObjTraitements = "CONNEXION " & vbCrLf
-
-               JavaMsg.from = StrEmailExpediteur
-
-               JavaMsg.Subject = StrSujet
-
-               JavaMsg.AppendText ("Apparemment, votre logiciel d'email ne supporte pas le format HTML.")
-
-               JavaMsg.Priority = 3
-
-               JavaMsg.ReturnReceipt = True
-
-               JavaMsg.Logging = True
-
-               JavaMsg.MailServerUserName = vbNullString
-
-               JavaMsg.MailServerPassWord = vbNullString
-
-               Set FsoSystem = New Scripting.FileSystemObject
-
-               Select Case HtmDocument.images.Length
-                  Case 0
-
-                  Case Else
-
-                     For IntNb = 0 To HtmDocument.images.Length - 1
-
-                        StrAttacheFichier = RemplaceChr(RemplaceChr(RemplaceChr(HtmDocument.images(IntNb).src, "file:///", vbNullString), "%20", " "), "/", "\")
-
-                        Select Case FsoSystem.FileExists(StrAttacheFichier)
-                           Case True
-
-                              StrAttacheID = JavaMsg.AddAttachment(StrAttacheFichier, True)
-
-                              Set FilFichier = FsoSystem.GetFile(StrAttacheFichier)
-
-                              HtmDocument.images(IntNb).src = "cid:" & StrAttacheID
-
-                           Case False
-
-                        End Select
-
-                     Next
-
-               End Select
-
-               On Error Resume Next
-
-               Select Case StrFichierAttache(LBound(StrFichierAttache))
-                  Case vbNullString
-
-                  Case Else
-
-                     For IntNb = LBound(StrFichierAttache) To UBound(StrFichierAttache)
-
-                        StrAttacheFichier = StrFichierAttache(IntNb)
-
-                        Select Case FsoSystem.FileExists(StrAttacheFichier)
-                           Case True
-
-                              JavaMsg.AddCustomAttachment StrAttacheFichier, Right(StrAttacheFichier, Len(StrAttacheFichier) - InStrRev(StrAttacheFichier, "\")), False
-
-                           Case False
-
-                        End Select
-
-                     Next
-
-               End Select
-
-               Select Case Err.Number
-                  Case vbEmpty
-
-                  Case Else
-
-                     Err.Clear
-
-               End Select
-
-               On Error GoTo Err_MailingJavaMailRequete
-
-               RsRequete.MoveLast
-
-               RsRequete.MoveFirst
-
-               TxtValeurTraitementsGlobalMin = 0
-
-               TxtValeurTraitementsGlobalValeur = 0
-
-               TxtValeurTraitementsGlobalMax = RsRequete.RecordCount
-
-               Do Until RsRequete.EOF = True
-
-                  JavaMsg.ClearRecipients
-
-                  Select Case BlnSimulation
-                        Case True
-
-                        Case False
-
-                           JavaMsg.AddRecipientBCC StrEmailCopieCacher
-
-                  End Select
-
-                  Select Case InStr(1, RsRequete(StrChampDestination), "mailto:")
-                     Case Is <= 0
-
-                        Select Case InStr(1, RsRequete(StrChampDestination), "#")
-                           Case Is <= 0
-
-                              StrEmailFrom = RsRequete(StrChampDestination)
-
-                           Case Else
-
-                              StrEmailFrom = Left(RsRequete(StrChampDestination), InStr(1, RsRequete(StrChampDestination), "#") - 1)
-
-                        End Select
-
-                     Case Else
-
-                        StrEmailFrom = RemplaceChr(Mid(RsRequete(StrChampDestination), InStr(1, RsRequete(StrChampDestination), "mailto:") + 7), "#", vbNullString)
-
-                  End Select
-
-                  Select Case BlnSimulation
-                     Case True
-
-                        JavaMsg.AddRecipient StrEmailExpediteur
-
-                        JavaMsg.Subject = StrSujet & " (" & StrEmailFrom & ")"
-
-                     Case False
-
-                        JavaMsg.AddRecipient StrEmailFrom
-
-                  End Select
-
-                  StrDocument = "<HTML>" & vbCrLf & HtmDocument.documentElement.innerHTML & vbCrLf & "</HTML>"
-
-                  IntPosDebut = 1
-
-                  Do Until InStr(IntPosDebut, StrDocument, "<D Value=") <= 0
-
-                     IntPosDebut = InStr(IntPosDebut, StrDocument, "<D Value=")
-
-                     IntPosFin = InStr(IntPosDebut, StrDocument, ">")
-
-                     StrChampNom = Mid(StrDocument, IntPosDebut + 10, IntPosFin - IntPosDebut - 11)
-
-                     IntPosFin = InStr(IntPosDebut, StrDocument, "</D>")
-
-                     On Error Resume Next
-
-                     StrDocument = Left(StrDocument, IntPosDebut - 1) & RsRequete(StrChampNom) & Mid(StrDocument, IntPosFin + 4)
-
-                     On Error GoTo Err_MailingJavaMailRequete
-
-                     Select Case Err.Number
-                        Case vbEmpty
-
-                        Case Else
-
-                           Err.Clear
-
-                           IntPosDebut = IntPosFin
-
-                     End Select
-
-                  Loop
-
-                  JavaMsg.HTMLBody = StrDocument
-
-                  TxtValeurTraitementsGlobalValeur = TxtValeurTraitementsGlobalValeur + 1
-
-                 Select Case BlnSimulation
-                     Case True
-
-                        TxtObjTraitements = TxtValeurTraitementsGlobalValeur & "/" & RsRequete.RecordCount & " Envoie Mail a  : " & StrEmailExpediteur & "(" & StrEmailFrom & ")" & vbCrLf
-
-                        TxtNotesTraitements = TxtNotesTraitements & TxtValeurTraitementsGlobalValeur & "/" & RsRequete.RecordCount & " Envoie Mail a  : " & StrEmailExpediteur & "(" & StrEmailFrom & ")" & vbCrLf
-
-                     Case False
-
-                        TxtObjTraitements = TxtValeurTraitementsGlobalValeur & "/" & RsRequete.RecordCount & " Envoie Mail a  : " & StrEmailFrom & vbCrLf
-
-                        TxtNotesTraitements = TxtNotesTraitements & TxtValeurTraitementsGlobalValeur & "/" & RsRequete.RecordCount & " Envoie Mail a  : " & StrEmailFrom & vbCrLf
-
-                  End Select
-
-                  Select Case JavaMsg.Send("172.23.4.201")
-                     Case True
-
-                        TxtNotesTraitements = TxtNotesTraitements & JavaMsg.Log & vbCrLf
-
-                        TxtNotesTraitements = TxtNotesTraitements & "Reussi" & vbCrLf
-
-                     Case False
-
-                        TxtNotesTraitements = TxtNotesTraitements & JavaMsg.Log & vbCrLf
-
-                        TxtNotesTraitements = TxtNotesTraitements & "Echec" & vbCrLf
-
-                  End Select
-
-                  DoEvents
-
-                  RsRequete.MoveNext
-
-               Loop
-
-         End Select
-
-         RsRequete.Close
-
-   End Select
-
-Exit_MailingJavaMailRequete:
-
-   TraitementClose
-
-   Set FsoSystem = Nothing
-
-   Set FilFichier = Nothing
-
-   Set HtmObjectDocument = Nothing
-
-   Set HtmDocument = Nothing
-
-   Set JavaMsg = Nothing
-
-   Set RsFichier = Nothing
-
-   Set RsRequete = Nothing
-
-   Exit Function
-
-Err_MailingJavaMailRequete:
-
-   MailingJavaMailRequete = False
-
-   AgtBretin.AfficheMessage Err.Number & " " & Err.Description, , "MailingJavaMailRequete"
-
-   Resume Exit_MailingJavaMailRequete
 End Function

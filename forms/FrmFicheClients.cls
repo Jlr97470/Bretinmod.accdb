@@ -249,7 +249,7 @@ Public Function AjouteCivilite(Optional ByVal StrCivilite As String) As Boolean
 
    AjouteCivilite = True
 
-   Select Case DeltaMsgBox("Voulez Vous Crée Une Nouvelle Civilité ? ", vbYesNo, Screen.ActiveForm.Caption)
+   Select Case MsgBox("Voulez Vous Crée Une Nouvelle Civilité ? ", vbYesNo, Screen.ActiveForm.Caption)
       Case vbYes
 
          DonneEtatFormulaire "FrmLstCivilite", IntEtat
@@ -321,7 +321,7 @@ Public Function AjouteVilles(Optional ByVal StrCodePostal As String) As Boolean
 
    AjouteVilles = True
 
-   Select Case DeltaMsgBox("Voulez Vous Créer Une Nouvelle Ville ? ", vbYesNo, Screen.ActiveForm.Caption)
+   Select Case MsgBox("Voulez Vous Créer Une Nouvelle Ville ? ", vbYesNo, Screen.ActiveForm.Caption)
       Case vbYes
 
          DonneEtatFormulaire "FrmLstVilles", IntEtat

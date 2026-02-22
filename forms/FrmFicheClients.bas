@@ -21,12 +21,13 @@ Begin Form
     GridY =10
     Width =15465
     ItemSuffix =94
-    Left =1320
-    Top =1740
-    Right =16785
-    Bottom =11235
+    Left =11370
+    Top =2370
+    Right =26835
+    Bottom =11865
     OnUnload ="[Event Procedure]"
-    Filter ="CliNum=82"
+    Filter ="([FrmFicheClients].[CliPrenom] Is Not Null AND [FrmFicheClients].[CliPrenom]<>\""
+        "\")"
     OnApplyFilter ="[Event Procedure]"
     Toolbar ="Outil Bretin Clients"
     RecSrcDt = Begin
@@ -43,32 +44,80 @@ Begin Form
     OnActivate ="[Event Procedure]"
     AllowDatasheetView =0
     FilterOnLoad =0
+    DatasheetBackColor12 =16777215
+    ShowPageMargins =0
+    DisplayOnSharePointSite =0
     DatasheetGridlinesColor12 =12632256
     Begin
         Begin Label
             BackStyle =0
             BackColor =-2147483633
             ForeColor =-2147483630
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
         End
         Begin Rectangle
             SpecialEffect =3
             BackStyle =0
-            BorderLineStyle =0
             Width =850
             Height =850
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
         End
         Begin Line
-            BorderLineStyle =0
             SpecialEffect =3
             Width =1701
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
         End
         Begin Image
             BackStyle =0
             OldBorderStyle =0
-            BorderLineStyle =0
             PictureAlignment =2
             Width =1701
             Height =1701
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
         End
         Begin CommandButton
             Width =1701
@@ -76,78 +125,203 @@ Begin Form
             FontSize =8
             FontWeight =400
             FontName ="MS Sans Serif"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
             BorderLineStyle =0
         End
         Begin OptionButton
             SpecialEffect =2
-            BorderLineStyle =0
             LabelX =230
             LabelY =-30
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
         End
         Begin CheckBox
             SpecialEffect =2
-            BorderLineStyle =0
             LabelX =230
             LabelY =-30
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
         End
         Begin OptionGroup
             SpecialEffect =3
-            BorderLineStyle =0
             Width =1701
             Height =1701
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
         End
         Begin BoundObjectFrame
             SpecialEffect =2
             OldBorderStyle =0
-            BorderLineStyle =0
             BackStyle =0
             Width =4536
             Height =2835
             LabelX =-1701
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
         End
         Begin TextBox
             FELineBreak = NotDefault
             SpecialEffect =2
-            BorderLineStyle =0
             Width =1701
             LabelX =-1701
             BackColor =-2147483643
             ForeColor =-2147483640
             AsianLineBreak =255
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
+            ShowDatePicker =1
         End
         Begin ListBox
             SpecialEffect =2
-            BorderLineStyle =0
             Width =1701
             Height =1417
             LabelX =-1701
             BackColor =-2147483643
             ForeColor =-2147483640
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
         End
         Begin ComboBox
             SpecialEffect =2
-            BorderLineStyle =0
             Width =1701
             LabelX =-1701
             BackColor =-2147483643
             ForeColor =-2147483640
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
         End
         Begin Subform
             SpecialEffect =2
-            BorderLineStyle =0
             Width =1701
             Height =1701
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
         End
         Begin UnboundObjectFrame
             SpecialEffect =2
             OldBorderStyle =1
             Width =4536
             Height =2835
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
         End
         Begin CustomControl
             SpecialEffect =2
             Width =4536
             Height =2835
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
         End
         Begin ToggleButton
             Width =283
@@ -155,17 +329,53 @@ Begin Form
             FontSize =8
             FontWeight =400
             FontName ="MS Sans Serif"
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
             BorderLineStyle =0
         End
         Begin Tab
             BackStyle =0
             Width =5103
             Height =3402
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
             BorderLineStyle =0
         End
         Begin Page
             Width =1701
             Height =1701
+            LeftPadding =30
+            TopPadding =30
+            RightPadding =30
+            BottomPadding =30
+            GridlineStyleLeft =0
+            GridlineStyleTop =0
+            GridlineStyleRight =0
+            GridlineStyleBottom =0
+            GridlineWidthLeft =1
+            GridlineWidthTop =1
+            GridlineWidthRight =1
+            GridlineWidthBottom =1
         End
         Begin FormHeader
             Height =680
@@ -1029,7 +1239,7 @@ Begin Form
                     Overlaps =1
                 End
                 Begin TextBox
-                    OverlapFlags =215
+                    OverlapFlags =87
                     Left =1125
                     Top =1140
                     Width =2820
@@ -1104,7 +1314,7 @@ Begin Form
 
                     Begin
                         Begin Label
-                            OverlapFlags =223
+                            OverlapFlags =95
                             Left =90
                             Top =1440
                             Width =3318
@@ -1588,7 +1798,7 @@ Begin Form
                     Overlaps =1
                 End
                 Begin TextBox
-                    OverlapFlags =223
+                    OverlapFlags =95
                     Left =1140
                     Top =4815
                     Width =2820
@@ -1604,7 +1814,7 @@ Begin Form
 
                     Begin
                         Begin Label
-                            OverlapFlags =223
+                            OverlapFlags =95
                             Left =1140
                             Top =4545
                             Width =2835
@@ -1716,7 +1926,7 @@ Begin Form
                 End
                 Begin CommandButton
                     TabStop = NotDefault
-                    OverlapFlags =95
+                    OverlapFlags =215
                     Left =5940
                     Top =5355
                     Width =315

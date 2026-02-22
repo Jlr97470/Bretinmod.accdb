@@ -4,110 +4,280 @@ Bretinmod.accdb
 VCS Version 4.1.2
 Full Path: D:\MES_SOURCES\ACCESS\SOURCES\DELTAINFORMATIQUE\ACCESS_2007-2016\BASE_BRETIN_CLIENTS\Bretinmod.accdb
 Export Folder: D:\MES_SOURCES\GITHUB\Bretinmod.accdb\
-Using Fast Save
-18/02/2026 13:25:32
+Performing Full Export
+22/02/2026 20:59:50
 -------------------------------------
-Scanning for changes...
-No modified db connections found in this database.
-No modified project found in this database.
-No modified vb project found in this database.
-No modified vbe references found in this database.
-No modified vbe forms found in this database.
-No modified proj properties found in this database.
-No modified saved specs found in this database.
-No modified modules found in this database.
-No modified shared images found in this database.
-No modified themes found in this database.
-No modified db properties found in this database.
-No modified imex specs found in this database.
-No modified tables found in this database.
-No modified queries found in this database.
-No modified macros found in this database.
-No modified reports found in this database.
-No modified table data found in this database.
-No modified table data macros found in this database.
-No modified relations found in this database.
-No modified doc properties found in this database.
-No modified nav pane groups found in this database.
-No modified hidden attributes found in this database.
+Scanning source files...
+No db connections found in this database.
+No vbe forms found in this database.
+No saved specs found in this database.
+  Removing orphaned file: D:\MES_SOURCES\GITHUB\Bretinmod.accdb\modules\ModGestionFichier.bas
+No shared images found in this database.
+No reports found in this database.
+No table data found in this database.
+No table data macros found in this database.
+No relations found in this database.
+-------------------------------------
+Exporting project...          
+  Bretinmod.accdb
+[1]
+-------------------------------------
+Exporting vb project...       
+  PrjBretinClients
+[1]
+-------------------------------------
+Exporting vbe references...   
+  DAO
+[9]
+-------------------------------------
+Exporting proj properties...  
+  Current Project Properties (Access)
+[2]
+-------------------------------------
+Exporting modules...          
+  ClsSendMailStatus
+  ModGestionAgent
+  ModGestionFormulaires
+  ModGestionFonctions
+  ModGestionMessagerie
+  ModGestionBase
+  ClsAgent
+  ModGestionFichiers
+  ModGestionTraitements
+  ModGestionImportsExports
+[10]
 -------------------------------------
 Exporting commandbars...      
   Outil Bretin Clients
   Menu Bretin Clients
 [2]
 -------------------------------------
-Exporting forms...            
-  FrmFicheClients
-    Sanitized in 0,059 seconds.
+Exporting themes...           
+  Thème Office
 [1]
-Added default .gitignore file
 -------------------------------------
-Done. (15,32 seconds)
+Exporting db properties...    
+  Database Properties (DAO)
+[49]
+-------------------------------------
+Exporting imex specs...       
+  PALM Spécification d'attache
+  PALMCLIENT Spécification d'attache
+[2]
+-------------------------------------
+Exporting tables...           
+  TBLCHAUDIERESINTERVENTIONS
+  TBLCIVILITES
+  TBLCLIENTS
+  TBLCLIENTSCHAUDIERES
+  TBLCLIENTSCONTRATS
+  TBLFICHIERS
+    Sanitized in 0,004 seconds.
+  TBLFICHIERS (SQL)
+  TBLMACHINES
+  TBLMACHINESMESSAGES
+  TBLMENU
+  TBLPARAMETRES
+    Sanitized in 0,002 seconds.
+  TBLPARAMETRES (SQL)
+  TBLPARAMETRESGENERALS
+  TBLVILLES
+[12]
+-------------------------------------
+Exporting queries...          
+  SelClientsChaudieres
+    Sanitized in 0,006 seconds.
+  SelClientsChaudieres (SQL)
+  SelClientsChaudieresActif
+    Sanitized in 0,001 seconds.
+  SelClientsChaudieresActif (SQL)
+  SelClientsContrats
+    Sanitized in 0,003 seconds.
+  SelClientsContrats (SQL)
+  SelClientsContratsActif
+    Sanitized in 0,002 seconds.
+  SelClientsContratsActif (SQL)
+  SelClientsInterventions
+    Sanitized in 0,003 seconds.
+  SelClientsInterventions (SQL)
+  SelClientsVilles
+    Sanitized in 0,006 seconds.
+  SelClientsVilles (SQL)
+  SelFichiersDetailler
+    Sanitized in 0,004 seconds.
+  SelFichiersDetailler (SQL)
+  SelFusClientsContrats
+    Sanitized in 0,009 seconds.
+  SelFusClientsContrats (SQL)
+  SelMailingClientsChaudieres
+    Sanitized in 0,005 seconds.
+  SelMailingClientsChaudieres (SQL)
+  SelMailingClientsContrats
+    Sanitized in 0,003 seconds.
+  SelMailingClientsContrats (SQL)
+  SelMailingClientsInterventions
+    Sanitized in 0,003 seconds.
+  SelMailingClientsInterventions (SQL)
+  SelMailingClientsVilles
+    Sanitized in 0,006 seconds.
+  SelMailingClientsVilles (SQL)
+  SelParametresDetailler
+    Sanitized in 0,002 seconds.
+  SelParametresDetailler (SQL)
+  SelParametresGeneralsDetailler
+    Sanitized in 0,001 seconds.
+  SelParametresGeneralsDetailler (SQL)
+[14]
+-------------------------------------
+Exporting forms...            
+  FrmGestionMail
+    Sanitized in 0,019 seconds.
+  SFrmFicheClientsContrats
+    Sanitized in 0,021 seconds.
+  FrmNotes
+    Sanitized in 0,004 seconds.
+  FrmFusion
+    Sanitized in 0,022 seconds.
+  FrmRechercheMulti
+    Sanitized in 0,030 seconds.
+  FrmMailingMulti
+    Sanitized in 0,027 seconds.
+  SFrmFicheClientsChaudieresInterventions
+    Sanitized in 0,015 seconds.
+  FrmLstInterventions
+    Sanitized in 0,011 seconds.
+  FrmGestionFichiers
+    Sanitized in 0,022 seconds.
+  SFrmFicheClientsChaudieres
+    Sanitized in 0,020 seconds.
+  FrmLstChaudieres
+    Sanitized in 0,012 seconds.
+  FrmLstMachines
+    Sanitized in 0,007 seconds.
+  FrmGestionTraitements
+    Sanitized in 0,005 seconds.
+  FrmMailing
+    Sanitized in 0,014 seconds.
+  FrmGestionParametres
+    Sanitized in 0,010 seconds.
+  FrmLstContrats
+    Sanitized in 0,013 seconds.
+  FrmRecherche
+    Sanitized in 0,015 seconds.
+  FrmMenuPrincipale
+    Sanitized in 0,054 seconds.
+  FrmGestionParametresGenerals
+    Sanitized in 0,009 seconds.
+  FrmLstCivilites
+    Sanitized in 0,009 seconds.
+  FrmLstVilles
+    Sanitized in 0,010 seconds.
+  FrmAbout
+    Sanitized in 0,053 seconds.
+  FrmLstClients
+    Sanitized in 0,013 seconds.
+  FrmFicheClients
+    Sanitized in 0,051 seconds.
+  FrmGestionMessages
+    Sanitized in 0,031 seconds.
+[25]
+-------------------------------------
+Exporting macros...           
+  Autokeys
+    Sanitized in 0,001 seconds.
+  Autoexec
+    Sanitized in 0,002 seconds.
+  MacMenuPrincipale
+    Sanitized in 0,007 seconds.
+[3]
+-------------------------------------
+Exporting doc properties...   
+  Database Documents
+[59]
+-------------------------------------
+Exporting nav pane groups...  
+  Groups
+[1]
+-------------------------------------
+Exporting hidden attributes...
+  Database hidden attributes
+[4]
+-------------------------------------
+Done. (20,29 seconds)
 
 --------------------------------------------------
                 PERFORMANCE REPORTS
 --------------------------------------------------
 Category                      Count     Seconds
 --------------------------------------------------
-CommandBars                   2         12,49
-Forms                         1         0,82
-Doc Properties                0         0,46
-DB Properties                 0         0,17
-IMEX Specs                    0         0,11
-Queries                       0         0,09
-Tables                        0         0,08
-Modules                       0         0,07
-DB Connections                0         0,06
-VBE References                0         0,05
-Nav Pane Groups               0         0,05
-Hidden Attributes             0         0,03
-Proj Properties               0         0,02
-Themes                        0         0,02
-VB Project                    0         0,01
-Relations                     0         0,01
-Project                       0         0,01
-Macros                        0         0,01
+CommandBars                   2         10,19
+Forms                         25        3,22
+Queries                       14        1,78
+Tables                        12        0,74
+Doc Properties                59        0,69
+Modules                       10        0,63
+DB Properties                 49        0,30
+Project                       1         0,25
+Nav Pane Groups               1         0,25
+VBE References                9         0,24
+IMEX Specs                    2         0,22
+Hidden Attributes             4         0,21
+Macros                        3         0,19
+VB Project                    1         0,14
+Themes                        1         0,14
+Proj Properties               2         0,14
+DB Connections                0         0,04
+Relations                     0         0,02
+Table Data Macros             0         0,01
 Shared Images                 0         0,01
-Table Data Macros             0         0,00
 Table Data                    0         0,00
 VBE Forms                     0         0,00
-Reports                       0         0,00
 Saved Specs                   0         0,00
+Reports                       0         0,00
 --------------------------------------------------
-TOTALS:                       3         14,58
+TOTALS:                       195       19,40
 --------------------------------------------------
 
 --------------------------------------------------
 Operations                    Count     Seconds
 --------------------------------------------------
-Scan DB Objects               1         4,65
-Save CommandBar Images        2         2,03
-Convert to JSON               5023      0,95
-Increment Progress            134       0,43
-Clear Orphaned Files          17        0,33
-Console Updates               5         0,30
-Close Open Objects            1         0,29
-Sanitize File                 1         0,06
-Check for linked table        24        0,04
-Get VBA Hash                  32        0,03
+Save CommandBar Images        2         3,05
+Increment Progress            282       2,56
+App.SaveAsText()              42        1,26
+Convert to JSON               4103      1,17
+Console Updates               8         1,03
+Scan DB Objects               1         0,57
+Sanitize File                 42        0,56
+Format SQL                    14        0,28
+Write File                    140       0,18
+Get File Property Hash        150       0,14
+Read File Bytes               55        0,13
+Export VBE Module             10        0,09
+Delete File                   98        0,07
+Read File                     55        0,07
+Clear Orphaned Files          17        0,07
+modFileAccess.VerifyPath      187       0,07
+Read File DevMode             25        0,06
+Compute SHA256                296       0,06
+Sanitize VBA Code             34        0,05
+Get VBA Hash                  35        0,04
+App.ExportXML()               2         0,03
+Get Modified Date             150       0,03
+Save Query SQL                14        0,03
+Save Table SQL                2         0,02
 Parse JSON                    1         0,02
-App.SaveAsText()              1         0,02
+Check for linked table        12        0,02
+Clear Files by Ext            6         0,02
 Quick Count Files             1         0,02
-Compute SHA256                64        0,01
-Write File                    5         0,01
-Get File Property Hash        6         0,01
 Parse JSON ISO Date           76        0,01
 Quick Count Objects           1         0,01
-Sanitize VBA Code             1         0,00
-Delete File                   3         0,00
-modFileAccess.VerifyPath      8         0,00
-Read File DevMode             1         0,00
-Read File                     2         0,00
-Read File Bytes               1         0,00
-Get Modified Date             4         0,00
-modFileAccess.GetUncPath      12        0,00
+Sanitize XML                  2         0,00
+Format XML                    2         0,00
+Close Open Objects            1         0,00
+Export Theme                  1         0,00
+modFileAccess.GetUncPath      24        0,00
 --------------------------------------------------
-Other Operations                        6,09
+Other Operations                        8,58
 --------------------------------------------------
 
 

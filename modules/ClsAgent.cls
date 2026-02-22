@@ -284,9 +284,9 @@ Public Sub InitialiseAssitant()
    Select Case Err.Number
       Case vbEmpty
 
-         udtAgentActive(0) = True
+         udtAgentActive(0) = False
 
-         udtAgentActive(1) = False
+         udtAgentActive(1) = True
 
       Case Else
 

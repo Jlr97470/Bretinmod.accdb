@@ -38,6 +38,9 @@
       "FrmGestionParametresGenerals": {
         "Description": "Formulaire De Gestion Des Parametres Generals"
       },
+      "FrmGestionTraitements": {
+        "Description": "Formulaire De Gestion Des Traitements"
+      },
       "FrmLstChaudieres": {
         "Description": "Formulaire De La Liste Des Chaudieres"
       },
@@ -100,17 +103,23 @@
       "ModGestionBase": {
         "Description": "Module De Gestion De La Base"
       },
-      "ModGestionFichier": {
+      "ModGestionFichiers": {
         "Description": "Module De Gestion Des Fichiers"
       },
       "ModGestionFonctions": {
         "Description": "Module De Gestion Des Fonctions"
       },
+      "ModGestionFormulaires": {
+        "Description": "Module De Gestion Des Formulaires"
+      },
       "ModGestionImportsExports": {
-        "Description": "Module De Gestion Des Importations Et Exportations"
+        "Description": "Module De Gestion Des Imports Et Exports"
       },
       "ModGestionMessagerie": {
         "Description": "Module De Gestion De La Messagerie"
+      },
+      "ModGestionTraitements": {
+        "Description": "Module De Gestion Des Traitements"
       }
     },
     "Scripts": {
