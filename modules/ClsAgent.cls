@@ -281,22 +281,32 @@ Public Sub InitialiseAssitant()
 
    AssAgent.Move 50, 50
 
-   Select Case Err.Number
-      Case vbEmpty
+   If AssAgent.FileName = StrAgentFichier Then
 
-         udtAgentActive(0) = False
+      Select Case Err.Number
+         Case vbEmpty
 
-         udtAgentActive(1) = True
+            udtAgentActive(0) = False
 
-      Case Else
+            udtAgentActive(1) = True
 
-         Err.Clear
+         Case Else
 
-         udtAgentActive(0) = True
+            Err.Clear
 
-         udtAgentActive(1) = False
+            udtAgentActive(0) = True
 
-   End Select
+            udtAgentActive(1) = False
+
+      End Select
+
+   Else
+
+      udtAgentActive(0) = True
+
+      udtAgentActive(1) = False
+
+   End If
 
    On Error GoTo Err_InitialiseAssitant
 
