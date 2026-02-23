@@ -484,11 +484,11 @@ Private Sub CmdValider_Click()
            Select Case IsNull(DLookup("FicType", "TBLFICHIERS", "FicType='FIC" & TxtExtension & "' AND FicCode LIKE '" & CmbFichiersPreference & "=" & CmbFichiersListe & "'"))
               Case True
 
-                 CurrentDb.Execute "INSERT INTO TBLFICHIERS (FicType,FicCode,FicValeur,FicValide) VALUES('FIC" & UCase(Right(CmbFichiersListe, Len(CmbFichiersListe) - InStrRev(CmbFichiersListe, "."))) & "','" & CmbFichiersPreference & "=" & CmbFichiersListe & "','" & TxtFichiersRepertoire & "',True) ;"
+                 CurrentDb.Execute "INSERT INTO TBLFICHIERS (FicType,FicCode,FicValeur,FicValide) VALUES('FIC" & TxtExtension & "','" & CmbFichiersPreference & "=" & CmbFichiersListe & "','" & TxtFichiersRepertoire & "',True) ;"
 
               Case False
 
-                 CurrentDb.Execute "UPDATE TBLFICHIERS SET FicValeur='" & TxtFichiersRepertoire & "', FicValide=True WHERE FicType='FIC" & UCase(Right(CmbFichiersListe, Len(CmbFichiersListe) - InStrRev(CmbFichiersListe, "."))) & "' AND FicCode='" & CmbFichiersPreference & "=" & CmbFichiersListe & "' ;"
+                 CurrentDb.Execute "UPDATE TBLFICHIERS SET FicValeur='" & TxtFichiersRepertoire & "', FicValide=True WHERE FicType='FIC" & TxtExtension & "' AND FicCode='" & CmbFichiersPreference & "=" & CmbFichiersListe & "' ;"
 
            End Select
 
