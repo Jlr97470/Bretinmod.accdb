@@ -440,7 +440,7 @@ Private Sub CmdRepertoireFichier_Click()
    Select Case CmbFichiersPreference.ListIndex
       Case -1
 
-         CmbFichiersPreference = "DEFAULT"
+         CmbFichiersPreference = "DEFAUT"
 
       Case Else
 

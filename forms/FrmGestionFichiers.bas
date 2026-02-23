@@ -23,10 +23,10 @@ Begin Form
     Width =6210
     DatasheetFontHeight =10
     ItemSuffix =29
-    Left =8775
-    Top =3630
-    Right =14985
-    Bottom =8145
+    Left =3030
+    Top =2505
+    Right =10140
+    Bottom =7785
     RecSrcDt = Begin
         0xc811440b399fe140
     End
@@ -37,6 +37,7 @@ Begin Form
     OnActivate ="[Event Procedure]"
     OnLoad ="[Event Procedure]"
     FilterOnLoad =0
+    ShowPageMargins =0
     AllowLayoutView =0
     PictureSizeMode =1
     DatasheetGridlinesColor12 =12632256
