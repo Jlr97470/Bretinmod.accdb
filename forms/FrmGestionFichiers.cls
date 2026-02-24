@@ -410,7 +410,7 @@ Private Sub CmdRepertoireFichier_Click()
 
    CdgFichiers.Title = "CP 2003 - Indiquer L'Emplacement Du Fichier " & CmbFichiersListe
 
-   CdgFichiers.Filters.Add TxtExtension, "*." & TxtExtension, 1
+   CdgFichiers.Filters.Add Nz(TxtExtension, "*"), "*." & Nz(TxtExtension, "*"), 1
 
    CdgFichiers.InitialFileName = IIf(IsNull(CmbFichiersListe), vbNullString, IIf(TxtFichiersRepertoire = vbNullString, "", TxtFichiersRepertoire & "\") & Nz(CmbFichiersListe))
 
