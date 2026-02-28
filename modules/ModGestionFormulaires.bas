@@ -550,3 +550,35 @@ Err_OuvreRecherche:
 
    Resume Exit_OuvreRecherche
 End Function
+
+
+'******************************************************************************
+'***    FONCTION:                                                                                       ***
+'******************************************************************************
+'***    FONCTION:                                                                                       ***
+'******************************************************************************
+'***    ENTREE:                                                                                          ***
+'***    SORTIE:                                                                                           ***
+'******************************************************************************
+'***    EXEMPLE:                                                                                        ***
+'******************************************************************************
+Public Function OuvreClientsEcheancier() As Boolean
+
+   On Error GoTo Err_OuvreRecherche
+
+   StrClientsFiltre = "CliNum In (SELECT CliConCliNum FROM TBLCLIENTSCONTRATS WHERE CliConDateFin<=CDate('" & (Now + DLookup("PARVALEUR", "TBLPARAMETRESGENERALS", "ParType='ECHDAT' AND ParCode='DATEECHEANCE'")) & "');)"
+
+   FermeFormulaire "FrmMenuPrincipale"
+
+   DoCmd.OpenForm "FrmLstClients", acNormal, , , acFormReadOnly, acWindowNormal
+
+Exit_OuvreRecherche:
+
+   Exit Function
+
+Err_OuvreRecherche:
+
+   MsgBox Err.Number & " " & Err.Description, , "OuvreRecherche"
+
+   Resume Exit_OuvreRecherche
+End Function
