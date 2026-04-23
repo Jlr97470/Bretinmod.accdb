@@ -536,7 +536,7 @@ Public Function OuvreRecherche(Optional ByVal bytTypeOuvre As Byte) As Boolean
 
       Case Else
 
-         Forms!FrmRecherche!OgtRecherche = bytTypeOuvre - 1
+         Forms!FrmRecherche!TbsRecherche = bytTypeOuvre
 
    End Select
 
@@ -566,7 +566,7 @@ Public Function OuvreClientsEcheancier() As Boolean
 
    On Error GoTo Err_OuvreRecherche
 
-   StrClientsFiltre = "CliNum In (SELECT CliConCliNum FROM TBLCLIENTSCONTRATS WHERE CliConDateFin<=CDate('" & (Now + DLookup("PARVALEUR", "TBLPARAMETRESGENERALS", "ParType='ECHDAT' AND ParCode='DATEECHEANCE'")) & "');)"
+   StrClientsFiltre = "CliNum In (SELECT TBLCLIENTSCONTRATS.CliConCliNum FROM TBLCLIENTSCONTRATS WHERE TBLCLIENTSCONTRATS.CliConDateFin<=CDate('" & (Now + DLookup("PARVALEUR", "TBLPARAMETRESGENERALS", "ParType='ECHDAT' AND ParCode='DATEECHEANCE'")) & "');)"
 
    FermeFormulaire "FrmMenuPrincipale"
 
