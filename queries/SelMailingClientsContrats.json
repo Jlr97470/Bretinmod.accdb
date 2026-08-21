@@ -1,0 +1,126 @@
+﻿{
+  "Info": {
+    "Class": "clsDbQuery",
+    "Description": "SelMailingClientsContrats"
+  },
+  "Items": {
+    "QueryType": 0,
+    "QueryProperties": {
+      "Description": {
+        "Type": 10,
+        "Value": "Mailing Des Contrats"
+      }
+    },
+    "Columns": {
+      "TBLCLIENTS.CliCode": {
+        "Caption": "Code",
+        "Description": "Code",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliNom": {
+        "Caption": "Nom",
+        "Description": "Nom",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliNum": {
+        "Caption": "Num",
+        "Description": "Num",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliPrenom": {
+        "Caption": "Prenom",
+        "Description": "Prenom",
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCONTRATS.CliConActif": {
+        "Caption": "Actif",
+        "Description": "Actif",
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCONTRATS.CliConCoefficient": {
+        "Caption": "Coefficient",
+        "Description": "Coefficient",
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCONTRATS.CliConDateDebut": {
+        "Caption": "Date Debut",
+        "Description": "Date Debut",
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCONTRATS.CliConDateFin": {
+        "Caption": "Date Fin",
+        "Description": "Date Fin",
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCONTRATS.CliConDatePaiment": {
+        "Caption": "Date Paiment",
+        "Description": "Date Paiment",
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCONTRATS.CliConPrix": {
+        "Caption": "Prix",
+        "Description": "Prix",
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCONTRATS.CliConPrixHT": {
+        "Caption": "Prix HT",
+        "Description": "Prix HT",
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCONTRATS.CliConTVA": {
+        "Caption": "TVA",
+        "Description": "TVA",
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCONTRATS.CliConType": {
+        "Caption": "Type",
+        "Description": "Type",
+        "AggregateType": -1
+      }
+    },
+    "DesignLayout": {
+      "State": 0,
+      "Window": {
+        "left": 47,
+        "top": 69,
+        "right": 1122,
+        "bottom": 461
+      },
+      "DesignerPane": {
+        "left": -1,
+        "top": -1,
+        "right": 1068,
+        "bottom": 223
+      },
+      "GridLeft": 0,
+      "GridTop": 0,
+      "ColumnsShown": 539,
+      "Tables": [
+        {
+          "Name": "TBLCLIENTS",
+          "Alias": "",
+          "Left": 38,
+          "Top": 6,
+          "Right": 134,
+          "Bottom": 195,
+          "ScrollTop": 0
+        },
+        {
+          "Name": "TBLCLIENTSCONTRATS",
+          "Alias": "",
+          "Left": 172,
+          "Top": 6,
+          "Right": 316,
+          "Bottom": 195,
+          "ScrollTop": 2
+        }
+      ]
+    },
+    "Properties": {
+      "Description": {
+        "Type": 10,
+        "Value": "Mailing Des Contrats"
+      }
+    }
+  }
+}

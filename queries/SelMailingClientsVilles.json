@@ -1,0 +1,235 @@
+﻿{
+  "Info": {
+    "Class": "clsDbQuery",
+    "Description": "SelMailingClientsVilles"
+  },
+  "Items": {
+    "QueryType": 0,
+    "QueryProperties": {
+      "Description": {
+        "Type": 10,
+        "Value": "Mailing Des Clients"
+      }
+    },
+    "Columns": {
+      "CliSousVilCodePostal": {
+        "Caption": "Code Postal",
+        "Description": "Code Postal",
+        "AggregateType": -1
+      },
+      "CliSousVilNom": {
+        "Caption": "Ville",
+        "Description": "Ville",
+        "AggregateType": -1
+      },
+      "CliSousVilPays": {
+        "Caption": "Pays",
+        "Description": "Pays",
+        "AggregateType": -1
+      },
+      "CliVilCodePostal": {
+        "Caption": "Code Postal",
+        "Description": "Code Postal",
+        "AggregateType": -1
+      },
+      "CliVilNom": {
+        "Caption": "Ville",
+        "Description": "Ville",
+        "AggregateType": -1
+      },
+      "CliVilPays": {
+        "Caption": "Pays",
+        "Description": "Pays",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliAdresse": {
+        "Caption": "Adresse",
+        "Description": "Adresse",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliBatiment": {
+        "Caption": "Batiment",
+        "Description": "Batiment",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliCivCode": {
+        "Caption": "Civ",
+        "Description": "Civ",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliCode": {
+        "Caption": "Code",
+        "Description": "Code",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliDateCre": {
+        "Caption": "Date Creation",
+        "Description": "Date Creation",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliDateMaj": {
+        "Caption": "Date Mise A Jour",
+        "Description": "Date Mise A Jour",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliDigicode": {
+        "Caption": "Digicode",
+        "Description": "Digicode",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliEscalier": {
+        "Caption": "Escalier",
+        "Description": "Escalier",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliEtage": {
+        "Caption": "Etage",
+        "Description": "Etage",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliNom": {
+        "Caption": "Nom",
+        "Description": "Nom",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliNote": {
+        "Caption": "Note",
+        "Description": "Note",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliNum": {
+        "Caption": "Num",
+        "Description": "Num",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliPorte": {
+        "Caption": "Porte",
+        "Description": "Porte",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliPrenom": {
+        "Caption": "Prenom",
+        "Description": "Prenom",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliSousAdresse": {
+        "Caption": "Souscripteur Adresse",
+        "Description": "Souscripteur Adresse",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliSousCivCode": {
+        "Caption": "Civ",
+        "Description": "Civ",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliSousNom": {
+        "Caption": "Souscripteur Nom",
+        "Description": "Souscripteur Nom",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliSousNote": {
+        "Caption": "Souscripteur Note",
+        "Description": "Souscripteur Note",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliSousPrenom": {
+        "Caption": "Souscripteur Prenom",
+        "Description": "Souscripteur Prenom",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliSousTel1": {
+        "Caption": "Tel1",
+        "Description": "Tel1",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliSousTel1Libelle": {
+        "Caption": "Tel1Lib",
+        "Description": "Tel1Lib",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliSousTel2": {
+        "Caption": "Tel2",
+        "Description": "Tel2",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliSousTel2Libelle": {
+        "Caption": "Tel2Lib",
+        "Description": "Tel2Lib",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliTel1": {
+        "Caption": "Tel1",
+        "Description": "Tel1",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliTel1Libelle": {
+        "Caption": "Tel1Lib",
+        "Description": "Tel1Lib",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliTel2": {
+        "Caption": "Tel2",
+        "Description": "Tel2",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliTel2Libelle": {
+        "Caption": "Tel2Lib",
+        "Description": "Tel2Lib",
+        "AggregateType": -1
+      }
+    },
+    "DesignLayout": {
+      "State": 2,
+      "Window": {
+        "left": -4,
+        "top": -30,
+        "right": 1024,
+        "bottom": 616
+      },
+      "DesignerPane": {
+        "left": -1,
+        "top": -1,
+        "right": 1021,
+        "bottom": 550
+      },
+      "GridLeft": 0,
+      "GridTop": 0,
+      "ColumnsShown": 539,
+      "Tables": [
+        {
+          "Name": "TBLVILLES",
+          "Alias": "",
+          "Left": 172,
+          "Top": 126,
+          "Right": 268,
+          "Bottom": 240,
+          "ScrollTop": 0
+        },
+        {
+          "Name": "TBLCLIENTS",
+          "Alias": "",
+          "Left": 38,
+          "Top": 6,
+          "Right": 134,
+          "Bottom": 495,
+          "ScrollTop": 0
+        },
+        {
+          "Name": "TBLVILLES_1",
+          "Alias": "",
+          "Left": 166,
+          "Top": 351,
+          "Right": 262,
+          "Bottom": 465,
+          "ScrollTop": 0
+        }
+      ]
+    },
+    "Properties": {
+      "Description": {
+        "Type": 10,
+        "Value": "Mailing Des Clients"
+      }
+    }
+  }
+}

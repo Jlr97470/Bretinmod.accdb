@@ -1,0 +1,128 @@
+﻿{
+  "Info": {
+    "Class": "clsDbQuery",
+    "Description": "SelClientsChaudieres"
+  },
+  "Items": {
+    "QueryType": 0,
+    "QueryProperties": {
+      "Description": {
+        "Type": 10,
+        "Value": "Selection Des Clients Et Chaudieres\r\nUtiliser Par :\r\n- FrmLstChaudieres"
+      }
+    },
+    "Columns": {
+      "TBLCLIENTS.CliCode": {
+        "Caption": "Code",
+        "Description": "Code",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliNom": {
+        "Caption": "Nom",
+        "ColumnWidth": 2010,
+        "Description": "Nom",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliNum": {
+        "Caption": "Num",
+        "Description": "Num",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliPrenom": {
+        "Caption": "Prenom",
+        "ColumnWidth": 720,
+        "Description": "Prenom",
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCHAUDIERES.CliChdActif": {
+        "Caption": "Actif",
+        "Description": "Actif",
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCHAUDIERES.CliChdDateServ": {
+        "Caption": "Date Serv",
+        "Description": "Date Serv",
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCHAUDIERES.CliChdGaz": {
+        "Caption": "Gaz",
+        "Description": "Gaz",
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCHAUDIERES.CliChdIdentification": {
+        "Caption": "Identification",
+        "Description": "Identification",
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCHAUDIERES.CliChdMarque": {
+        "Caption": "Marque",
+        "Description": "Marque",
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCHAUDIERES.CliChdNum": {
+        "Caption": "Chaudiere Num",
+        "Description": "Chaudiere Num",
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCHAUDIERES.CliChdPuissance": {
+        "Caption": "Puissance",
+        "Description": "Puissance",
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCHAUDIERES.CliChdRef": {
+        "Caption": "Ref",
+        "Description": "Ref",
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCHAUDIERES.CliChdRemarque": {
+        "Caption": "Remarque",
+        "Description": "Remarque",
+        "AggregateType": -1
+      }
+    },
+    "DesignLayout": {
+      "State": 0,
+      "Window": {
+        "left": 47,
+        "top": 69,
+        "right": 1002,
+        "bottom": 582
+      },
+      "DesignerPane": {
+        "left": -1,
+        "top": -1,
+        "right": 948,
+        "bottom": 337
+      },
+      "GridLeft": 0,
+      "GridTop": 0,
+      "ColumnsShown": 539,
+      "Tables": [
+        {
+          "Name": "TBLCLIENTS",
+          "Alias": "",
+          "Left": 38,
+          "Top": 6,
+          "Right": 134,
+          "Bottom": 270,
+          "ScrollTop": 0
+        },
+        {
+          "Name": "TBLCLIENTSCHAUDIERES",
+          "Alias": "",
+          "Left": 172,
+          "Top": 6,
+          "Right": 268,
+          "Bottom": 180,
+          "ScrollTop": 1
+        }
+      ]
+    },
+    "Properties": {
+      "Description": {
+        "Type": 10,
+        "Value": "Selection Des Clients Et Chaudieres\r\nUtiliser Par :\r\n- FrmLstChaudieres"
+      }
+    }
+  }
+}

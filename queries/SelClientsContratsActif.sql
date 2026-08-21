@@ -5,6 +5,6 @@ FROM
 WHERE
   (
     (
-      (TBLCLIENTSCONTRATS.CliConActif)= True
+      (TBLCLIENTSCONTRATS.CliConActif) = True
     )
   );

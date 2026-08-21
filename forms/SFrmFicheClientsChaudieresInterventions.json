@@ -23,6 +23,13 @@
       "ItemLayout": "Horizontal Columns",
       "FastPrint": 1,
       "Datasheet": 1
-    }
+    },
+    "Properties": {
+      "Description": {
+        "Type": 10,
+        "Value": "Sous Formulaire Clients Chaudieres Interventions\r\nUtiliser Par:\r\n- SFrmFicheClientsChaudieres"
+      }
+    },
+    "Hidden": true
   }
 }

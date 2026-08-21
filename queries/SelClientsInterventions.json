@@ -1,0 +1,120 @@
+﻿{
+  "Info": {
+    "Class": "clsDbQuery",
+    "Description": "SelClientsInterventions"
+  },
+  "Items": {
+    "QueryType": 0,
+    "QueryProperties": {
+      "Description": {
+        "Type": 10,
+        "Value": "Selection Des Clients Et Interventions\r\nUtiliser Par :\r\n- FrmLstInterventions"
+      }
+    },
+    "Columns": {
+      "TBLCHAUDIERESINTERVENTIONS.ChdIntDate": {
+        "Caption": "Date",
+        "Description": "Date",
+        "AggregateType": -1
+      },
+      "TBLCHAUDIERESINTERVENTIONS.ChdIntDescription": {
+        "Caption": "Description",
+        "Description": "Description",
+        "AggregateType": -1
+      },
+      "TBLCHAUDIERESINTERVENTIONS.ChdIntNote": {
+        "Caption": "Note",
+        "Description": "Note",
+        "AggregateType": -1
+      },
+      "TBLCHAUDIERESINTERVENTIONS.ChdIntNum": {
+        "Caption": "Intervention Num",
+        "Description": "Intervention Num",
+        "AggregateType": -1
+      },
+      "TBLCHAUDIERESINTERVENTIONS.ChdIntNumero": {
+        "Caption": "Numero",
+        "Description": "Numero",
+        "AggregateType": -1
+      },
+      "TBLCHAUDIERESINTERVENTIONS.ChdIntType": {
+        "Caption": "Type",
+        "Description": "Type",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliCode": {
+        "Caption": "Code",
+        "Description": "Code",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliNom": {
+        "Caption": "Nom",
+        "Description": "Nom",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliNum": {
+        "Caption": "Num",
+        "Description": "Num",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliPrenom": {
+        "Caption": "Prenom",
+        "Description": "Prenom",
+        "AggregateType": -1
+      }
+    },
+    "DesignLayout": {
+      "State": 0,
+      "Window": {
+        "left": -138,
+        "top": 88,
+        "right": 1026,
+        "bottom": 712
+      },
+      "DesignerPane": {
+        "left": -1,
+        "top": -1,
+        "right": 1153,
+        "bottom": 341
+      },
+      "GridLeft": 0,
+      "GridTop": 0,
+      "ColumnsShown": 539,
+      "Tables": [
+        {
+          "Name": "TBLCLIENTS",
+          "Alias": "",
+          "Left": 38,
+          "Top": 6,
+          "Right": 134,
+          "Bottom": 113,
+          "ScrollTop": 4
+        },
+        {
+          "Name": "TBLCLIENTSCHAUDIERES",
+          "Alias": "",
+          "Left": 172,
+          "Top": 6,
+          "Right": 268,
+          "Bottom": 113,
+          "ScrollTop": 0
+        },
+        {
+          "Name": "TBLCHAUDIERESINTERVENTIONS",
+          "Alias": "",
+          "Left": 306,
+          "Top": 6,
+          "Right": 402,
+          "Bottom": 113,
+          "ScrollTop": 0
+        }
+      ]
+    },
+    "Properties": {
+      "Description": {
+        "Type": 10,
+        "Value": "Selection Des Clients Et Interventions\r\nUtiliser Par :\r\n- FrmLstInterventions"
+      }
+    }
+  }
+}

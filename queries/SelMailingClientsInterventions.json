@@ -1,0 +1,115 @@
+﻿{
+  "Info": {
+    "Class": "clsDbQuery",
+    "Description": "SelMailingClientsInterventions"
+  },
+  "Items": {
+    "QueryType": 0,
+    "QueryProperties": {
+      "Description": {
+        "Type": 10,
+        "Value": "Mailing Des Interventions"
+      }
+    },
+    "Columns": {
+      "TBLCHAUDIERESINTERVENTIONS.ChdIntDate": {
+        "Caption": "Date",
+        "Description": "Date",
+        "AggregateType": -1
+      },
+      "TBLCHAUDIERESINTERVENTIONS.ChdIntDescription": {
+        "Caption": "Description",
+        "Description": "Description",
+        "AggregateType": -1
+      },
+      "TBLCHAUDIERESINTERVENTIONS.ChdIntNote": {
+        "Caption": "Note",
+        "Description": "Note",
+        "AggregateType": -1
+      },
+      "TBLCHAUDIERESINTERVENTIONS.ChdIntNumero": {
+        "Caption": "Numero",
+        "Description": "Numero",
+        "AggregateType": -1
+      },
+      "TBLCHAUDIERESINTERVENTIONS.ChdIntType": {
+        "Caption": "Type",
+        "Description": "Type",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliCode": {
+        "Caption": "Code",
+        "Description": "Code",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliNom": {
+        "Caption": "Nom",
+        "Description": "Nom",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliNum": {
+        "Caption": "Num",
+        "Description": "Num",
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliPrenom": {
+        "Caption": "Prenom",
+        "Description": "Prenom",
+        "AggregateType": -1
+      }
+    },
+    "DesignLayout": {
+      "State": 0,
+      "Window": {
+        "left": 47,
+        "top": 69,
+        "right": 1122,
+        "bottom": 579
+      },
+      "DesignerPane": {
+        "left": -1,
+        "top": -1,
+        "right": 1064,
+        "bottom": 341
+      },
+      "GridLeft": 0,
+      "GridTop": 0,
+      "ColumnsShown": 539,
+      "Tables": [
+        {
+          "Name": "TBLCLIENTS",
+          "Alias": "",
+          "Left": 38,
+          "Top": 6,
+          "Right": 134,
+          "Bottom": 120,
+          "ScrollTop": 4
+        },
+        {
+          "Name": "TBLCLIENTSCHAUDIERES",
+          "Alias": "",
+          "Left": 172,
+          "Top": 6,
+          "Right": 268,
+          "Bottom": 120,
+          "ScrollTop": 0
+        },
+        {
+          "Name": "TBLCHAUDIERESINTERVENTIONS",
+          "Alias": "",
+          "Left": 306,
+          "Top": 6,
+          "Right": 402,
+          "Bottom": 120,
+          "ScrollTop": 3
+        }
+      ]
+    },
+    "Properties": {
+      "Description": {
+        "Type": 10,
+        "Value": "Mailing Des Interventions"
+      }
+    }
+  }
+}

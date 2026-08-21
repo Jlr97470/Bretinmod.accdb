@@ -1,0 +1,50 @@
+﻿{
+  "Info": {
+    "Class": "clsDbQuery",
+    "Description": "SelClientsChaudieresActif"
+  },
+  "Items": {
+    "QueryType": 0,
+    "QueryProperties": {
+      "Description": {
+        "Type": 10,
+        "Value": "Selection Des Clients Et Chaudieres Actif"
+      }
+    },
+    "DesignLayout": {
+      "State": 0,
+      "Window": {
+        "left": 62,
+        "top": 84,
+        "right": 1258,
+        "bottom": 389
+      },
+      "DesignerPane": {
+        "left": -1,
+        "top": -1,
+        "right": 1189,
+        "bottom": 144
+      },
+      "GridLeft": 0,
+      "GridTop": 0,
+      "ColumnsShown": 539,
+      "Tables": [
+        {
+          "Name": "TBLCLIENTSCHAUDIERES",
+          "Alias": "",
+          "Left": 38,
+          "Top": 6,
+          "Right": 134,
+          "Bottom": 113,
+          "ScrollTop": 6
+        }
+      ]
+    },
+    "Properties": {
+      "Description": {
+        "Type": 10,
+        "Value": "Selection Des Clients Et Chaudieres Actif"
+      }
+    }
+  }
+}

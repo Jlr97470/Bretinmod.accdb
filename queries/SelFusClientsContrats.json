@@ -1,0 +1,260 @@
+﻿{
+  "Info": {
+    "Class": "clsDbQuery",
+    "Description": "SelFusClientsContrats"
+  },
+  "Items": {
+    "QueryType": 0,
+    "QueryProperties": {
+      "OrderByOn": {
+        "Type": 1,
+        "Value": true
+      },
+      "Description": {
+        "Type": 10,
+        "Value": "Fusion Des Clients Et Contrats\r\nUtiliser Par :\r\n- FrmLstContrats"
+      }
+    },
+    "Columns": {
+      "CliConDateDebutFr": {
+        "ColumnWidth": 1845,
+        "Format": {
+          "Type": "dbText",
+          "Value": "Short Date"
+        },
+        "AggregateType": -1
+      },
+      "CliConDateFinFr": {
+        "ColumnWidth": 1605,
+        "AggregateType": -1
+      },
+      "CliConPrix2": {
+        "ColumnWidth": 5055,
+        "Format": {
+          "Type": "dbText",
+          "Value": "#,##0.00 €;-#,##0.00 €"
+        },
+        "AggregateType": -1
+      },
+      "CliSousAdresse": {
+        "ColumnWidth": 3255,
+        "AggregateType": -1
+      },
+      "CliSousCivCode": {
+        "ColumnWidth": 1560,
+        "AggregateType": -1
+      },
+      "CliSousDes": {
+        "ColumnWidth": 2850,
+        "AggregateType": -1
+      },
+      "CliSousNom": {
+        "ColumnWidth": 2505,
+        "AggregateType": -1
+      },
+      "CliSousPrenom": {
+        "ColumnWidth": 1530,
+        "AggregateType": -1
+      },
+      "CliSousTel1": {
+        "ColumnWidth": 1230,
+        "AggregateType": -1
+      },
+      "CliSousTel1Libelle": {
+        "ColumnWidth": 1770,
+        "AggregateType": -1
+      },
+      "CliSousTel2": {
+        "ColumnWidth": 1230,
+        "AggregateType": -1
+      },
+      "CliSousTel2Libelle": {
+        "ColumnWidth": 1770,
+        "AggregateType": -1
+      },
+      "CliSousVilCodePostal": {
+        "ColumnWidth": 2085,
+        "AggregateType": -1
+      },
+      "CliSousVilNom": {
+        "ColumnWidth": 2385,
+        "AggregateType": -1
+      },
+      "CliSousVilPays": {
+        "ColumnWidth": 1530,
+        "AggregateType": -1
+      },
+      "CliVilPays": {
+        "ColumnWidth": 1065,
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliAdresse": {
+        "ColumnWidth": 2550,
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliNom": {
+        "ColumnWidth": 2505,
+        "AggregateType": -1
+      },
+      "TBLCLIENTS.CliSousNote": {
+        "ColumnWidth": 2400,
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCHAUDIERES.CliChdActif": {
+        "ColumnWidth": 2265,
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCHAUDIERES.CliChdCliNum": {
+        "ColumnWidth": 3210,
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCHAUDIERES.CliChdDateServ": {
+        "ColumnWidth": 3750,
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCHAUDIERES.CliChdGaz": {
+        "ColumnWidth": 2235,
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCHAUDIERES.CliChdIdentification": {
+        "ColumnWidth": 2955,
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCHAUDIERES.CliChdMarque": {
+        "ColumnWidth": 2520,
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCHAUDIERES.CliChdPuissance": {
+        "ColumnWidth": 2790,
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCHAUDIERES.CliChdRef": {
+        "ColumnWidth": 2745,
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCHAUDIERES.CliChdRemarque": {
+        "ColumnWidth": 2760,
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCONTRATS.CliConActif": {
+        "ColumnWidth": 2070,
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCONTRATS.CliConCliNum": {
+        "ColumnWidth": 2970,
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCONTRATS.CliConCoefficient": {
+        "ColumnWidth": 2535,
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCONTRATS.CliConDateDebut": {
+        "ColumnWidth": 2610,
+        "Format": {
+          "Type": "dbText",
+          "Value": "Short Date"
+        },
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCONTRATS.CliConDateFin": {
+        "ColumnWidth": 2370,
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCONTRATS.CliConDatePaiment": {
+        "ColumnWidth": 2820,
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCONTRATS.CliConNum": {
+        "ColumnWidth": 2310,
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCONTRATS.CliConPrix": {
+        "ColumnWidth": 1980,
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCONTRATS.CliConPrixHT": {
+        "ColumnWidth": 2235,
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCONTRATS.CliConTVA": {
+        "ColumnWidth": 2010,
+        "AggregateType": -1
+      },
+      "TBLCLIENTSCONTRATS.CliConType": {
+        "ColumnWidth": 3675,
+        "AggregateType": -1
+      }
+    },
+    "DesignLayout": {
+      "State": 0,
+      "Window": {
+        "left": 62,
+        "top": 84,
+        "right": 1258,
+        "bottom": 819
+      },
+      "DesignerPane": {
+        "left": -1,
+        "top": -1,
+        "right": 1185,
+        "bottom": 559
+      },
+      "GridLeft": 0,
+      "GridTop": 0,
+      "ColumnsShown": 539,
+      "Tables": [
+        {
+          "Name": "TBLVILLES",
+          "Alias": "",
+          "Left": 5,
+          "Top": 223,
+          "Right": 242,
+          "Bottom": 322,
+          "ScrollTop": 0
+        },
+        {
+          "Name": "TBLCLIENTS",
+          "Alias": "",
+          "Left": 272,
+          "Top": 128,
+          "Right": 412,
+          "Bottom": 587,
+          "ScrollTop": 0
+        },
+        {
+          "Name": "TBLVILLES_1",
+          "Alias": "",
+          "Left": 442,
+          "Top": 427,
+          "Right": 680,
+          "Bottom": 526,
+          "ScrollTop": 0
+        },
+        {
+          "Name": "TBLCLIENTSCHAUDIERES",
+          "Alias": "",
+          "Left": 442,
+          "Top": 5,
+          "Right": 679,
+          "Bottom": 194,
+          "ScrollTop": 0
+        },
+        {
+          "Name": "TBLCLIENTSCONTRATS",
+          "Alias": "",
+          "Left": 5,
+          "Top": 6,
+          "Right": 242,
+          "Bottom": 210,
+          "ScrollTop": 0
+        }
+      ]
+    },
+    "Properties": {
+      "Description": {
+        "Type": 10,
+        "Value": "Fusion Des Clients Et Contrats\r\nUtiliser Par :\r\n- FrmLstContrats"
+      }
+    }
+  }
+}

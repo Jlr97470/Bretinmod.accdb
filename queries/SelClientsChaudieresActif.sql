@@ -7,6 +7,6 @@ WHERE
     (
       (
         TBLCLIENTSCHAUDIERES.CliChdActif
-      )= True
+      ) = True
     )
   );

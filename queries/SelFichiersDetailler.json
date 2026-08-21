@@ -1,0 +1,72 @@
+﻿{
+  "Info": {
+    "Class": "clsDbQuery",
+    "Description": "SelFichiersDetailler"
+  },
+  "Items": {
+    "QueryType": 0,
+    "QueryProperties": {
+      "Description": {
+        "Type": 10,
+        "Value": "Selection Des Fichiers Detailler\r\nUtiliser Par :\r\n- FrmGestionFichiers"
+      }
+    },
+    "Columns": {
+      "FicCode1": {
+        "ColumnWidth": 1200,
+        "AggregateType": -1
+      },
+      "FicCode2": {
+        "ColumnWidth": 2565,
+        "AggregateType": -1
+      },
+      "FicType1": {
+        "ColumnWidth": 1005,
+        "AggregateType": -1
+      },
+      "FicType2": {
+        "ColumnWidth": 1005,
+        "AggregateType": -1
+      },
+      "TBLFICHIERS.FicValide": {
+        "ColumnWidth": 2520,
+        "AggregateType": -1
+      }
+    },
+    "DesignLayout": {
+      "State": 0,
+      "Window": {
+        "left": 142,
+        "top": 146,
+        "right": 1178,
+        "bottom": 739
+      },
+      "DesignerPane": {
+        "left": -1,
+        "top": -1,
+        "right": 1012,
+        "bottom": 415
+      },
+      "GridLeft": 0,
+      "GridTop": 0,
+      "ColumnsShown": 539,
+      "Tables": [
+        {
+          "Name": "TBLFICHIERS",
+          "Alias": "",
+          "Left": 48,
+          "Top": 12,
+          "Right": 192,
+          "Bottom": 156,
+          "ScrollTop": 0
+        }
+      ]
+    },
+    "Properties": {
+      "Description": {
+        "Type": 10,
+        "Value": "Selection Des Fichiers Detailler\r\nUtiliser Par :\r\n- FrmGestionFichiers"
+      }
+    }
+  }
+}

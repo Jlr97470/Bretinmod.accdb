@@ -84,7 +84,7 @@
   CDbl(
     - Int(
       -([CliConPrix] * 10 ^ 2)
-    )/ 10 ^ 2
+    ) / 10 ^ 2
   ) AS CliConPrix2
 FROM
   TBLVILLES
