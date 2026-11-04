@@ -33,11 +33,9 @@
             "ControlIdName": "Open Form",
             "BeginGroup": false,
             "BuiltIn": true,
-            "BuiltInFace": false,
             "Caption": "Fiche Des Clients",
             "DescriptionText": "Ouvrir formulaire 'FrmFicheClients'",
             "Enabled": true,
-            "FaceId": 31,
             "HelpContextId": 0,
             "HelpFile": "",
             "HyperlinkType": 0,
@@ -50,7 +48,8 @@
             "TooltipText": "Ouvrir formulaire 'FrmFicheClients' (Ctrl + F1)",
             "Type": 1,
             "Visible": true,
-            "Id": 1837
+            "Id": 1837,
+            "ImagePath": "rel:Menu Bretin Clients_Images\\Fiche Des Clients"
           }
         ]
       },
@@ -75,11 +74,9 @@
             "ControlIdName": "Open Form",
             "BeginGroup": false,
             "BuiltIn": true,
-            "BuiltInFace": false,
             "Caption": "Liste Des Civilités",
             "DescriptionText": "Ouvrir formulaire 'FrmLstCivilites'",
             "Enabled": true,
-            "FaceId": 176,
             "HelpContextId": 0,
             "HelpFile": "",
             "HyperlinkType": 0,
@@ -92,17 +89,16 @@
             "TooltipText": "Ouvrir formulaire 'FrmLstCivilites'",
             "Type": 1,
             "Visible": true,
-            "Id": 1837
+            "Id": 1837,
+            "ImagePath": "rel:Menu Bretin Clients_Images\\Liste Des Civilités"
           },
           {
             "ControlIdName": "Open Form",
             "BeginGroup": false,
             "BuiltIn": true,
-            "BuiltInFace": false,
             "Caption": "Liste Des Villes",
             "DescriptionText": "Ouvrir formulaire 'FrmLstVilles'",
             "Enabled": true,
-            "FaceId": 176,
             "HelpContextId": 0,
             "HelpFile": "",
             "HyperlinkType": 0,
@@ -115,17 +111,16 @@
             "TooltipText": "Ouvrir formulaire 'FrmLstVilles'",
             "Type": 1,
             "Visible": true,
-            "Id": 1837
+            "Id": 1837,
+            "ImagePath": "rel:Menu Bretin Clients_Images\\Liste Des Villes"
           },
           {
             "ControlIdName": "About",
             "BeginGroup": false,
             "BuiltIn": true,
-            "BuiltInFace": false,
             "Caption": "Liste Des Clients Echeancier",
             "DescriptionText": "Exécuter macro 'MacMenuPrincipale.Liste Clients Echeancier'",
             "Enabled": true,
-            "FaceId": 176,
             "HelpContextId": 0,
             "HelpFile": "",
             "HyperlinkType": 0,
@@ -138,17 +133,16 @@
             "TooltipText": "Exécuter macro 'MacMenuPrincipale.Liste Clients Echeancier'",
             "Type": 1,
             "Visible": true,
-            "Id": 1839
+            "Id": 1839,
+            "ImagePath": "rel:Menu Bretin Clients_Images\\Liste Des Clients Echeancier"
           },
           {
             "ControlIdName": "About",
             "BeginGroup": true,
             "BuiltIn": true,
-            "BuiltInFace": false,
             "Caption": "Liste Des Machines",
             "DescriptionText": "Exécuter macro 'MacMenuPrincipale.Liste Machines'",
             "Enabled": true,
-            "FaceId": 2141,
             "HelpContextId": 0,
             "HelpFile": "",
             "HyperlinkType": 0,
@@ -161,7 +155,8 @@
             "TooltipText": "Exécuter macro 'MacMenuPrincipale.Liste Machines'",
             "Type": 1,
             "Visible": true,
-            "Id": 1839
+            "Id": 1839,
+            "ImagePath": "rel:Menu Bretin Clients_Images\\Liste Des Machines"
           }
         ]
       },
@@ -186,11 +181,9 @@
             "ControlIdName": "About",
             "BeginGroup": false,
             "BuiltIn": true,
-            "BuiltInFace": false,
             "Caption": "Recherche Simple",
             "DescriptionText": "Exécuter macro 'MacMenuPrincipale.Recherche Simple'",
             "Enabled": true,
-            "FaceId": 49,
             "HelpContextId": 0,
             "HelpFile": "",
             "HyperlinkType": 0,
@@ -203,17 +196,16 @@
             "TooltipText": "Exécuter macro 'MacMenuPrincipale.Recherche Simple'",
             "Type": 1,
             "Visible": true,
-            "Id": 1839
+            "Id": 1839,
+            "ImagePath": "rel:Menu Bretin Clients_Images\\Recherche Simple"
           },
           {
             "ControlIdName": "About",
             "BeginGroup": false,
             "BuiltIn": true,
-            "BuiltInFace": false,
             "Caption": "Recherche Clients",
             "DescriptionText": "Exécuter macro 'MacMenuPrincipale.Recherche Clients'",
             "Enabled": true,
-            "FaceId": 49,
             "HelpContextId": 0,
             "HelpFile": "",
             "HyperlinkType": 0,
@@ -226,17 +218,16 @@
             "TooltipText": "Exécuter macro 'MacMenuPrincipale.Recherche Clients'",
             "Type": 1,
             "Visible": true,
-            "Id": 1839
+            "Id": 1839,
+            "ImagePath": "rel:Menu Bretin Clients_Images\\Recherche Clients"
           },
           {
             "ControlIdName": "About",
             "BeginGroup": false,
             "BuiltIn": true,
-            "BuiltInFace": false,
             "Caption": "Recherche Chaudiéres",
             "DescriptionText": "Exécuter macro 'MacMenuPrincipale.Recherche Chaudieres'",
             "Enabled": true,
-            "FaceId": 49,
             "HelpContextId": 0,
             "HelpFile": "",
             "HyperlinkType": 0,
@@ -249,17 +240,16 @@
             "TooltipText": "Exécuter macro 'MacMenuPrincipale.Recherche Chaudieres'",
             "Type": 1,
             "Visible": true,
-            "Id": 1839
+            "Id": 1839,
+            "ImagePath": "rel:Menu Bretin Clients_Images\\Recherche Chaudiéres"
           },
           {
             "ControlIdName": "About",
             "BeginGroup": false,
             "BuiltIn": true,
-            "BuiltInFace": false,
             "Caption": "Recherche Interventions",
             "DescriptionText": "Exécuter macro 'MacMenuPrincipale.Recherche Interventions'",
             "Enabled": true,
-            "FaceId": 49,
             "HelpContextId": 0,
             "HelpFile": "",
             "HyperlinkType": 0,
@@ -272,17 +262,16 @@
             "TooltipText": "Exécuter macro 'MacMenuPrincipale.Recherche Interventions'",
             "Type": 1,
             "Visible": true,
-            "Id": 1839
+            "Id": 1839,
+            "ImagePath": "rel:Menu Bretin Clients_Images\\Recherche Interventions"
           },
           {
             "ControlIdName": "About",
             "BeginGroup": false,
             "BuiltIn": true,
-            "BuiltInFace": false,
             "Caption": "Recherche Contrats",
             "DescriptionText": "Exécuter macro 'MacMenuPrincipale.Recherche Contrats'",
             "Enabled": true,
-            "FaceId": 49,
             "HelpContextId": 0,
             "HelpFile": "",
             "HyperlinkType": 0,
@@ -295,17 +284,16 @@
             "TooltipText": "Exécuter macro 'MacMenuPrincipale.Recherche Contrats'",
             "Type": 1,
             "Visible": true,
-            "Id": 1839
+            "Id": 1839,
+            "ImagePath": "rel:Menu Bretin Clients_Images\\Recherche Contrats"
           },
           {
             "ControlIdName": "About",
             "BeginGroup": true,
             "BuiltIn": true,
-            "BuiltInFace": false,
             "Caption": "Selection Clients",
             "DescriptionText": "Exécuter macro 'MacMenuPrincipale.Selection Clients'",
             "Enabled": true,
-            "FaceId": 274,
             "HelpContextId": 0,
             "HelpFile": "",
             "HyperlinkType": 0,
@@ -318,17 +306,16 @@
             "TooltipText": "Exécuter macro 'MacMenuPrincipale.Selection Clients'",
             "Type": 1,
             "Visible": true,
-            "Id": 1839
+            "Id": 1839,
+            "ImagePath": "rel:Menu Bretin Clients_Images\\Selection Clients"
           },
           {
             "ControlIdName": "About",
             "BeginGroup": false,
             "BuiltIn": true,
-            "BuiltInFace": false,
             "Caption": "Selection Chaudiéres",
             "DescriptionText": "Exécuter macro 'MacMenuPrincipale.Selection Chaudieres'",
             "Enabled": true,
-            "FaceId": 274,
             "HelpContextId": 0,
             "HelpFile": "",
             "HyperlinkType": 0,
@@ -341,17 +328,16 @@
             "TooltipText": "Exécuter macro 'MacMenuPrincipale.Selection Chaudieres'",
             "Type": 1,
             "Visible": true,
-            "Id": 1839
+            "Id": 1839,
+            "ImagePath": "rel:Menu Bretin Clients_Images\\Selection Chaudiéres"
           },
           {
             "ControlIdName": "About",
             "BeginGroup": false,
             "BuiltIn": true,
-            "BuiltInFace": false,
             "Caption": "Selection Interventions",
             "DescriptionText": "Exécuter macro 'MacMenuPrincipale.Selection Interventions'",
             "Enabled": true,
-            "FaceId": 274,
             "HelpContextId": 0,
             "HelpFile": "",
             "HyperlinkType": 0,
@@ -364,17 +350,16 @@
             "TooltipText": "Exécuter macro 'MacMenuPrincipale.Selection Interventions'",
             "Type": 1,
             "Visible": true,
-            "Id": 1839
+            "Id": 1839,
+            "ImagePath": "rel:Menu Bretin Clients_Images\\Selection Interventions"
           },
           {
             "ControlIdName": "About",
             "BeginGroup": false,
             "BuiltIn": true,
-            "BuiltInFace": false,
             "Caption": "Selection Contrats",
             "DescriptionText": "Exécuter macro 'MacMenuPrincipale.Selection Contrats'",
             "Enabled": true,
-            "FaceId": 274,
             "HelpContextId": 0,
             "HelpFile": "",
             "HyperlinkType": 0,
@@ -387,7 +372,8 @@
             "TooltipText": "Exécuter macro 'MacMenuPrincipale.Selection Contrats'",
             "Type": 1,
             "Visible": true,
-            "Id": 1839
+            "Id": 1839,
+            "ImagePath": "rel:Menu Bretin Clients_Images\\Selection Contrats"
           }
         ]
       },
@@ -412,11 +398,9 @@
             "ControlIdName": "About",
             "BeginGroup": false,
             "BuiltIn": true,
-            "BuiltInFace": false,
             "Caption": "Mailing Clients",
             "DescriptionText": "Exécuter macro 'MacMenuPrincipale.Mailing Clients Villes'",
             "Enabled": true,
-            "FaceId": 279,
             "HelpContextId": 0,
             "HelpFile": "",
             "HyperlinkType": 0,
@@ -429,17 +413,16 @@
             "TooltipText": "Exécuter macro 'MacMenuPrincipale.Mailing Clients Villes'",
             "Type": 1,
             "Visible": true,
-            "Id": 1839
+            "Id": 1839,
+            "ImagePath": "rel:Menu Bretin Clients_Images\\Mailing Clients"
           },
           {
             "ControlIdName": "About",
             "BeginGroup": false,
             "BuiltIn": true,
-            "BuiltInFace": false,
             "Caption": "Mailing Clients Chaudiéres",
             "DescriptionText": "Exécuter macro 'MacMenuPrincipale.Mailing Clients Chaudieres'",
             "Enabled": true,
-            "FaceId": 279,
             "HelpContextId": 0,
             "HelpFile": "",
             "HyperlinkType": 0,
@@ -452,17 +435,16 @@
             "TooltipText": "Exécuter macro 'MacMenuPrincipale.Mailing Clients Chaudieres'",
             "Type": 1,
             "Visible": true,
-            "Id": 1839
+            "Id": 1839,
+            "ImagePath": "rel:Menu Bretin Clients_Images\\Mailing Clients Chaudiéres"
           },
           {
             "ControlIdName": "About",
             "BeginGroup": false,
             "BuiltIn": true,
-            "BuiltInFace": false,
             "Caption": "Mailing Clients Interventions",
             "DescriptionText": "Exécuter macro 'MacMenuPrincipale.Mailing Clients Interventions'",
             "Enabled": true,
-            "FaceId": 279,
             "HelpContextId": 0,
             "HelpFile": "",
             "HyperlinkType": 0,
@@ -475,17 +457,16 @@
             "TooltipText": "Exécuter macro 'MacMenuPrincipale.Mailing Clients Interventions'",
             "Type": 1,
             "Visible": true,
-            "Id": 1839
+            "Id": 1839,
+            "ImagePath": "rel:Menu Bretin Clients_Images\\Mailing Clients Interventions"
           },
           {
             "ControlIdName": "About",
             "BeginGroup": false,
             "BuiltIn": true,
-            "BuiltInFace": false,
             "Caption": "Mailing Clients Contrats",
             "DescriptionText": "Exécuter macro 'MacMenuPrincipale.Mailing Clients Contrats'",
             "Enabled": true,
-            "FaceId": 279,
             "HelpContextId": 0,
             "HelpFile": "",
             "HyperlinkType": 0,
@@ -498,7 +479,8 @@
             "TooltipText": "Exécuter macro 'MacMenuPrincipale.Mailing Clients Contrats'",
             "Type": 1,
             "Visible": true,
-            "Id": 1839
+            "Id": 1839,
+            "ImagePath": "rel:Menu Bretin Clients_Images\\Mailing Clients Contrats"
           }
         ]
       },
@@ -523,11 +505,9 @@
             "ControlIdName": "Open Form",
             "BeginGroup": false,
             "BuiltIn": true,
-            "BuiltInFace": false,
             "Caption": "Gestion Des Parametres",
             "DescriptionText": "Ouvrir formulaire 'FrmGestionParametres'",
             "Enabled": true,
-            "FaceId": 2144,
             "HelpContextId": 0,
             "HelpFile": "",
             "HyperlinkType": 0,
@@ -540,17 +520,16 @@
             "TooltipText": "Ouvrir formulaire 'FrmGestionParametres'",
             "Type": 1,
             "Visible": true,
-            "Id": 1837
+            "Id": 1837,
+            "ImagePath": "rel:Menu Bretin Clients_Images\\Gestion Des Parametres"
           },
           {
             "ControlIdName": "Open Form",
             "BeginGroup": false,
             "BuiltIn": true,
-            "BuiltInFace": false,
             "Caption": "Gestion Des Parametres General",
             "DescriptionText": "Ouvrir formulaire 'FrmGestionParametresGeneral'",
             "Enabled": true,
-            "FaceId": 2144,
             "HelpContextId": 0,
             "HelpFile": "",
             "HyperlinkType": 0,
@@ -563,17 +542,16 @@
             "TooltipText": "Ouvrir formulaire 'FrmGestionParametresGeneral'",
             "Type": 1,
             "Visible": true,
-            "Id": 1837
+            "Id": 1837,
+            "ImagePath": "rel:Menu Bretin Clients_Images\\Gestion Des Parametres General"
           },
           {
             "ControlIdName": "Open Form",
             "BeginGroup": false,
             "BuiltIn": true,
-            "BuiltInFace": false,
             "Caption": "Gestion Des Fichiers",
             "DescriptionText": "Ouvrir formulaire 'FrmGestionFichiers'",
             "Enabled": true,
-            "FaceId": 2144,
             "HelpContextId": 0,
             "HelpFile": "",
             "HyperlinkType": 0,
@@ -586,17 +564,16 @@
             "TooltipText": "Ouvrir formulaire 'FrmGestionFichiers'",
             "Type": 1,
             "Visible": true,
-            "Id": 1837
+            "Id": 1837,
+            "ImagePath": "rel:Menu Bretin Clients_Images\\Gestion Des Fichiers"
           },
           {
             "ControlIdName": "Open Form",
             "BeginGroup": true,
             "BuiltIn": true,
-            "BuiltInFace": false,
             "Caption": "Gestion Des Messages",
             "DescriptionText": "Ouvrir formulaire 'FrmGestionMessages'",
             "Enabled": true,
-            "FaceId": 2148,
             "HelpContextId": 0,
             "HelpFile": "",
             "HyperlinkType": 0,
@@ -609,14 +586,15 @@
             "TooltipText": "Ouvrir formulaire 'FrmGestionMessages'",
             "Type": 1,
             "Visible": true,
-            "Id": 1837
+            "Id": 1837,
+            "ImagePath": "rel:Menu Bretin Clients_Images\\Gestion Des Messages"
           }
         ]
       },
       {
-        "FaceIdName": "Records",
+        "ControlIdName": "Records",
         "BeginGroup": false,
-        "BuiltIn": false,
+        "BuiltIn": true,
         "Caption": "Enregi&strements",
         "DescriptionText": "",
         "Enabled": true,
@@ -629,11 +607,12 @@
         "TooltipText": "",
         "Type": 10,
         "Visible": false,
+        "Id": 30014,
         "Controls": [
           {
-            "FaceIdName": "Filter",
+            "ControlIdName": "Filter",
             "BeginGroup": false,
-            "BuiltIn": false,
+            "BuiltIn": true,
             "Caption": "&Filtrer",
             "DescriptionText": "",
             "Enabled": false,
@@ -646,6 +625,7 @@
             "TooltipText": "",
             "Type": 10,
             "Visible": true,
+            "Id": 30031,
             "Controls": [
               {
                 "ControlIdName": "Filter By Form",
@@ -690,9 +670,9 @@
             ]
           },
           {
-            "FaceIdName": "Sort",
+            "ControlIdName": "Sort",
             "BeginGroup": false,
-            "BuiltIn": false,
+            "BuiltIn": true,
             "Caption": "&Trier",
             "DescriptionText": "",
             "Enabled": false,
@@ -705,6 +685,7 @@
             "TooltipText": "",
             "Type": 10,
             "Visible": true,
+            "Id": 30103,
             "Controls": [
               {
                 "ControlIdName": "Sort Ascending",
@@ -805,9 +786,9 @@
         ]
       },
       {
-        "FaceIdName": "Window",
+        "ControlIdName": "Window",
         "BeginGroup": false,
-        "BuiltIn": false,
+        "BuiltIn": true,
         "Caption": "Fe&nêtre",
         "DescriptionText": "",
         "Enabled": true,
@@ -820,6 +801,7 @@
         "TooltipText": "",
         "Type": 10,
         "Visible": true,
+        "Id": 30009,
         "Controls": [
           {
             "ControlIdName": "Split",

@@ -16,11 +16,9 @@
         "ControlIdName": "Open Form",
         "BeginGroup": false,
         "BuiltIn": true,
-        "BuiltInFace": false,
         "Caption": "Fiche Des Clients",
         "DescriptionText": "Ouvrir formulaire 'FrmFicheClients'",
         "Enabled": true,
-        "FaceId": 31,
         "HelpContextId": 0,
         "HelpFile": "",
         "HyperlinkType": 0,
@@ -33,17 +31,16 @@
         "TooltipText": "Ouvrir formulaire 'FrmFicheClients' (Ctrl + F1)",
         "Type": 1,
         "Visible": true,
-        "Id": 1837
+        "Id": 1837,
+        "ImagePath": "rel:Outil Bretin Clients_Images\\Fiche Des Clients"
       },
       {
         "ControlIdName": "About",
         "BeginGroup": false,
         "BuiltIn": true,
-        "BuiltInFace": false,
         "Caption": "Recherche Simple",
         "DescriptionText": "Exécuter macro 'MacMenuPrincipale.Recherche Simple'",
         "Enabled": true,
-        "FaceId": 2151,
         "HelpContextId": 0,
         "HelpFile": "",
         "HyperlinkType": 0,
@@ -56,17 +53,16 @@
         "TooltipText": "Exécuter macro 'MacMenuPrincipale.Recherche Simple'",
         "Type": 1,
         "Visible": true,
-        "Id": 1839
+        "Id": 1839,
+        "ImagePath": "rel:Outil Bretin Clients_Images\\Recherche Simple"
       },
       {
         "ControlIdName": "About",
         "BeginGroup": false,
         "BuiltIn": true,
-        "BuiltInFace": false,
         "Caption": "Selection Clients",
         "DescriptionText": "Exécuter macro 'MacMenuPrincipale.Selection Clients'",
         "Enabled": true,
-        "FaceId": 274,
         "HelpContextId": 0,
         "HelpFile": "",
         "HyperlinkType": 0,
@@ -79,17 +75,16 @@
         "TooltipText": "Exécuter macro 'MacMenuPrincipale.Selection Clients'",
         "Type": 1,
         "Visible": true,
-        "Id": 1839
+        "Id": 1839,
+        "ImagePath": "rel:Outil Bretin Clients_Images\\Selection Clients"
       },
       {
         "ControlIdName": "About",
         "BeginGroup": false,
         "BuiltIn": true,
-        "BuiltInFace": false,
         "Caption": "Liste Machines",
         "DescriptionText": "Exécuter macro 'MacMenuPrincipale.Liste Machines'",
         "Enabled": true,
-        "FaceId": 2141,
         "HelpContextId": 0,
         "HelpFile": "",
         "HyperlinkType": 0,
@@ -102,17 +97,16 @@
         "TooltipText": "Exécuter macro 'MacMenuPrincipale.Liste Machines'",
         "Type": 1,
         "Visible": true,
-        "Id": 1839
+        "Id": 1839,
+        "ImagePath": "rel:Outil Bretin Clients_Images\\Liste Machines"
       },
       {
         "ControlIdName": "About",
         "BeginGroup": false,
         "BuiltIn": true,
-        "BuiltInFace": false,
         "Caption": "Gestion Messages",
         "DescriptionText": "Exécuter macro 'MacMenuPrincipale.Gestion Messages'",
         "Enabled": true,
-        "FaceId": 2148,
         "HelpContextId": 0,
         "HelpFile": "",
         "HyperlinkType": 0,
@@ -125,7 +119,8 @@
         "TooltipText": "Exécuter macro 'MacMenuPrincipale.Gestion Messages'",
         "Type": 1,
         "Visible": true,
-        "Id": 1839
+        "Id": 1839,
+        "ImagePath": "rel:Outil Bretin Clients_Images\\Gestion Messages"
       }
     ]
   }
